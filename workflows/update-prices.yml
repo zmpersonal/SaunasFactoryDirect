@@ -1,0 +1,44 @@
+name: Update sauna prices and deploy
+on:
+  schedule:
+    - cron: '17 11 * * 1'
+  workflow_dispatch:
+permissions:
+  actions: read
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: price-refresh
+  cancel-in-progress: false
+jobs:
+  refresh:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install updater dependencies
+        run: pip install requests beautifulsoup4
+      - name: Refresh prices and model pages
+        run: python scripts/update_prices.py
+      - name: Commit refreshed data
+        run: |
+          git config user.name "sauna-price-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data models sitemap.xml
+          git diff --cached --quiet || git commit -m "Update sauna price index"
+          git push origin HEAD:main
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+      - name: Deploy refreshed site
+        id: deployment
+        uses: actions/deploy-pages@v4
+        with:
+          token: ${{ github.token }}

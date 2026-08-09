@@ -1,0 +1,19 @@
+model_key,brand,model,title,category,placement,capacity,msrp,source,price,url,featured,observed
+fd-1,Finnmark Designs,FD-1,Finnmark FD-1 Full-Spectrum Infrared Sauna,Infrared,Indoor,1,5164.5,InHouse Wellness,4695.0,https://inhousewellness.com/collections/finnmark-designs,True,2026-08-08
+fd-2,Finnmark Designs,FD-2,Finnmark FD-2 Full Spectrum Infrared Sauna,Infrared,Indoor,2,7194.0,InHouse Wellness,5995.0,https://inhousewellness.com/collections/finnmark-designs,True,2026-08-08
+fd-3,Finnmark Designs,FD-3,Finnmark FD-3 Full Spectrum 3-Person Infrared Sauna,Infrared,Indoor,3,7144.5,InHouse Wellness,6495.0,https://inhousewellness.com/collections/finnmark-designs,True,2026-08-08
+fd-4,Finnmark Designs,FD-4,Finnmark FD-4 Trinity Infrared & Steam Sauna Combo,Hybrid,Indoor,2,8574.5,InHouse Wellness,7795.0,https://inhousewellness.com/products/finnmark-fd-4,True,2026-08-08
+fd-4,Finnmark Designs,FD-4,Finnmark FD-4 Trinity Infrared & Steam Sauna Combo,Hybrid,Indoor,2,8574.5,My Energy Flow,7795.0,https://myenergyflow.com/products/finnmark-fd-4-trinity-infrared-steam-sauna-combo,False,2026-08-08
+fd-4,Finnmark Designs,FD-4,Finnmark FD-4 Trinity Infrared & Steam Sauna Combo,Hybrid,Indoor,2,8574.5,Topture,7795.0,https://topture.com/products/finnmark-fd-4-trinity-infrared-steam-sauna-combo,False,2026-08-08
+fd-5,Finnmark Designs,FD-5,Finnmark FD-5 Trinity XL Infrared & Steam Sauna Combo,Hybrid,Indoor,3,9894.5,InHouse Wellness,8995.0,https://inhousewellness.com/collections/finnmark-designs,True,2026-08-08
+dyn-6103-01,Dynamic Saunas,DYN-6103-01,Dynamic Saunas Avila Elite Ultra-Low EMF Infrared Sauna,Infrared,Indoor,2,3999.0,InHouse Wellness,2299.0,https://inhousewellness.com/products/dynamic-saunas-avila-elite,True,2026-08-08
+dynamic-cardoba,Dynamic Saunas,Cardoba,Dynamic Cardoba 2-Person Ultra Low EMF Infrared Sauna,Infrared,Indoor,2,4999.0,InHouse Wellness,2499.0,https://inhousewellness.com/products/dynamic-cardoba-2-infrared-sauna,True,2026-08-08
+dyn-6210-01,Dynamic Saunas,DYN-6210-01,Dynamic Venice Elite 2-Person Ultra Low EMF Infrared Sauna,Infrared,Indoor,2,5999.0,InHouse Wellness,2699.0,https://inhousewellness.com/products/dynamic-venice-elite,True,2026-08-08
+dynamic-madrid,Dynamic Saunas,Madrid Elite,Dynamic Madrid Elite 3-Person Ultra Low EMF Infrared Sauna,Infrared,Indoor,3,7999.0,InHouse Wellness,3699.0,https://inhousewellness.com/products/dynamic-madrid-elite-3-person-ultra-low-emf-sauna,True,2026-08-08
+mx-j206-01-zf,Maxxus,MX-J206-01-ZF,Maxxus Seattle 2-Person Near Zero EMF FAR IR Sauna,Infrared,Indoor,2,4999.0,InHouse Wellness,2699.0,https://inhousewellness.com/products/maxxus-seattle-sauna,True,2026-08-08
+mx-s306-01,Maxxus,MX-S306-01,Maxxus MX-S306-01 ELITE 3-Person Ultra Low EMF Infrared Sauna,Infrared,Indoor,3,10400.0,InHouse Wellness,7999.0,https://inhousewellness.com/products/maxxus-sline-elite-sauna,True,2026-08-08
+arosa,Golden Designs,Arosa,Golden Designs Arosa 4-Person Barrel Traditional Sauna,Traditional,Outdoor,4,7999.0,InHouse Wellness,5999.0,https://inhousewellness.com/products/arosa-4p-barrel-sauna,True,2026-08-08
+saunalife-e8g,SaunaLife,E8G,SaunaLife Model E8G Outdoor Barrel Sauna with Glass Front,Traditional,Outdoor,6,8734.0,InHouse Wellness,7940.0,https://inhousewellness.com/products/saunalife-e8g,True,2026-08-08
+saunalife-g11,SaunaLife,G11,SaunaLife G11 Garden-Series Outdoor Home Sauna,Traditional,Outdoor,8,18678.0,InHouse Wellness,16980.0,https://inhousewellness.com/products/saunalife-g11,True,2026-08-08
+ct-minipod,Dundalk LeisureCraft,CT MiniPOD,LeisureCraft CT MiniPOD Outdoor Sauna,Traditional,Outdoor,4,10226.56,InHouse Wellness,6478.0,https://inhousewellness.com/collections/leisurecraft,True,2026-08-08
+mw20,Mande Spa,MW20,MW20 ThermoWood Outdoor Sauna,Traditional,Outdoor,6,8999.0,InHouse Wellness,8099.0,https://inhousewellness.com/collections/saunas,True,2026-08-08

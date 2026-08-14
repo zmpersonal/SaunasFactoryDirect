@@ -1,3 +1,36 @@
-match_key,source_name,url,active,notes
-fd-4,My Energy Flow,https://myenergyflow.com/products/finnmark-fd-4-trinity-infrared-steam-sauna-combo,1,Exact-model authorized dealer listing
-fd-4,Topture,https://topture.com/products/finnmark-fd-4-trinity-infrared-steam-sauna-combo,1,Exact-model dealer listing
+match_key,source_name,url,active,notes,fallback_price,verified_date,availability
+fd-4,My Energy Flow,https://myenergyflow.com/products/finnmark-fd-4-trinity-infrared-steam-sauna-combo,1,Exact-model authorized dealer listing,,,listed
+fd-4,Topture,https://topture.com/products/finnmark-fd-4-trinity-infrared-steam-sauna-combo,1,Exact-model dealer listing,,,listed
+dyn-6220-01-elite,Golden Designs Inc,https://goldendesigninc.com/products/dynamic-vittoria-2-person-ultra-low-emf-far-ir-sauna-dyn-6220-01-elite,0,Manufacturer-direct listing; exact model identifier verified.,5999,2026-08-12,sold_out
+dyn-6215-05,Golden Designs Inc,https://goldendesigninc.com/products/new-2026-model-dynamic-lucca-2-person-low-emf-far-infrared-sauna-canadian-hemlock,0,Manufacturer-direct listing; exact model identifier verified.,5999,2026-08-12,sold_out
+dyn-6119-01-elite,Golden Designs Inc,https://goldendesigninc.com/products/new-2026-model-gracia-1-2-person-ultra-low-emf-far-infrared-sauna,0,Manufacturer-direct listing; exact model identifier verified.,3999,2026-08-12,sold_out
+dyn-6229-03-fs,Golden Designs Inc,https://goldendesigninc.com/products/new-2026-model-serena-2-person-full-spectrum-infrared-sauna-canadian-hemlock,0,Manufacturer-direct listing; exact model identifier verified.,5999,2026-08-12,sold_out
+dyn-6229-01-elite,Golden Designs Inc,https://goldendesigninc.com/products/new-2026-model-serena-2-person-ultra-low-emf-far-infrared-sauna,1,Manufacturer-direct listing.,4999,2026-08-12,listed
+dyn-6225-02-elite,Golden Designs Inc,https://goldendesigninc.com/products/dyn-6225-02-dynamic-low-emf-far-infrared-sauna-heming-edition-copy,1,Manufacturer-direct listing.,5999,2026-08-12,listed
+dyn-6009-03-fs,Golden Designs Inc,https://goldendesigninc.com/products/new-2026-model-dynamic-santorini-1-2-person-full-spectrum-near-zero-emf-far-ir-sauna-dyn-6009-03-fs,1,Manufacturer-direct listing.,3999,2026-08-12,listed
+dyn-6209-03-fs,Golden Designs Inc,https://goldendesigninc.com/products/new-2023-model-dynamic-2-person-full-spectrum-infrared-sauna-canadian-hemlock,1,Manufacturer-direct listing.,5999,2026-08-12,listed
+dyn-6336-03-fs,Golden Designs Inc,https://goldendesigninc.com/products/new-2023-model-lugano-3-person-full-spectrum-infrared-sauna-canadian-hemlock,1,Manufacturer-direct listing.,7999,2026-08-12,listed
+dyn-6306-02,Golden Designs Inc,https://goldendesigninc.com/products/dyn-6306-01-dynamic-low-emf-far-infrared-sauna-bellagio-edition,1,"Manufacturer-direct listing. URL slug contains DYN-6306-01, but page/model identifier researched as DYN-6306-02.",5999,2026-08-12,listed
+dyn-6336-02-elite,Golden Designs Inc,https://goldendesigninc.com/products/updated-2023-model-dyn-6336-02-dynamic-ultra-low-emf-far-infrared-sauna-lugano-edition,1,Manufacturer-direct listing.,6999,2026-08-12,listed
+mx-j206-01-zf,Golden Designs Inc,https://goldendesigninc.com/products/maxxus-seattle-2-person-near-zero-emf-far-infrared-sauna-canadian-hemlock,1,Manufacturer-direct listing.,4999,2026-08-12,listed
+dyn-6336-02,Golden Designs Inc,https://goldendesigninc.com/products/new-2019-model-dyn-6336-01-dynamic-low-emf-far-infrared-sauna-lugano-edition,1,Manufacturer-direct listing. Historical URL slug differs from researched current model identifier.,5999,2026-08-12,listed
+dyn-6209-01,Golden Design Saunas,https://goldendesignsaunas.com/products/golden-designs-sauna-dyn-6209-01,1,Published sale/current price and reference price. Reference price observed: $3999.,2705,2026-08-12,listed
+mx-j206-01,Golden Design Saunas,https://goldendesignsaunas.com/products/golden-designs-sauna-mx-j206-01,1,Published sale/current price and reference price. Reference price observed: $3699.,2705,2026-08-12,listed
+dyn-6106-01-elite,Golden Design Saunas,https://goldendesignsaunas.com/products/golden-designs-sauna-dyn-6106-01-elite,1,Published sale/current price and reference price. Reference price observed: $3999.,2705,2026-08-12,listed
+dyn-6203-01,Golden Design Saunas,https://goldendesignsaunas.com/products/golden-designs-sauna-dyn-6203-01,1,Published sale/current price and reference price. Reference price observed: $3999.,2705,2026-08-12,listed
+dyn-6103-01-elite,Golden Design Saunas,https://goldendesignsaunas.com/products/golden-designs-sauna-dyn-6103-01-elite,1,Published sale/current price and reference price. Reference price observed: $3999.,2705,2026-08-12,listed
+dyn-6203-02-fs,Golden Design Saunas,https://goldendesignsaunas.com/products/golden-designs-sauna-dyn-6203-02-fs,1,Published sale/current price and reference price. Reference price observed: $5999.,3882,2026-08-12,listed
+dyn-6225-02,Golden Design Saunas,https://goldendesignsaunas.com/products/golden-designs-sauna-dyn-6225-02,1,Published sale/current price and reference price. Reference price observed: $4999.,3176,2026-08-12,listed
+dyn-6202-03,Golden Design Saunas,https://goldendesignsaunas.com/products/golden-designs-sauna-dyn-6202-03,1,Published sale/current price and reference price. Reference price observed: $3999.,2705,2026-08-12,listed
+dyn-6119-01-elite,Golden Design Saunas,https://goldendesignsaunas.com/products/golden-designs-sauna-dyn-6119-01-elite,1,Published sale/current price and reference price. Reference price observed: $3499.,2706.45,2026-08-12,listed
+dyn-6115-05,Golden Design Saunas,https://goldendesignsaunas.com/products/golden-designs-sauna-dyn-6115-05,1,Published sale/current price and reference price. Reference price observed: $3999.,2706,2026-08-12,listed
+dyn-6229-01,Golden Design Saunas,https://goldendesignsaunas.com/products/golden-designs-sauna-dyn-6229-01,1,Published sale/current price and reference price. Reference price observed: $3999.,2706,2026-08-12,listed
+dyn-6215-05,Golden Design Saunas,https://goldendesignsaunas.com/products/golden-designs-sauna-dyn-6215-05,1,Published sale/current price and reference price. Reference price observed: $5999.,3412,2026-08-12,listed
+dyn-6215-05-elite,Golden Design Saunas,https://goldendesignsaunas.com/products/golden-designs-sauna-dyn-6215-05-elite,1,Published sale/current price and reference price. Reference price observed: $6999.,3882,2026-08-12,listed
+dyn-6306-02,Golden Design Saunas,https://goldendesignsaunas.com/products/golden-designs-sauna-dyn-6306-02,1,Published sale/current price and reference price. Reference price observed: $5999.,3176,2026-08-12,listed
+dyn-6206-01,Green Vista Living,https://greenvistaliving.com/products/golden-designs-sauna-dyn-6206-01,1,Published sale/current price and reference price. Reference price observed: $3999.,2705,2026-08-12,listed
+dyn-6306-02,Green Vista Living,https://greenvistaliving.com/products/golden-designs-sauna-dyn-6306-02,1,Published sale/current price and reference price. Reference price observed: $5999.,3176,2026-08-12,listed
+dyn-6336-02,Green Vista Living,https://greenvistaliving.com/products/golden-designs-sauna-dyn-6336-02,1,Published sale/current price and reference price. Reference price observed: $5999.,3176,2026-08-12,listed
+dyn-6336-02-elite,Green Vista Living,https://greenvistaliving.com/products/golden-designs-sauna-dyn-6336-02-elite,1,Published sale/current price and reference price. Reference price observed: $6999.,4117,2026-08-12,listed
+dyn-6206-01-elite,Green Vista Living,https://greenvistaliving.com/products/golden-designs-sauna-dyn-6206-01-elite,1,Published sale/current price and reference price. Reference price observed: $4999.,2941,2026-08-12,listed
+dyn-6119-01-elite,Green Vista Living,https://greenvistaliving.com/products/golden-designs-sauna-dyn-6119-01-elite,1,Published sale/current price and reference price. Reference price observed: $3499.,2706.45,2026-08-12,listed

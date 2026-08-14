@@ -1,7 +1,407 @@
 {
-  "generated_at": "2026-08-10T11:59:27+00:00",
+  "generated_at": "2026-08-14T17:23:54+00:00",
   "currency": "USD",
   "products": [
+    {
+      "model_key": "almost-heaven-audra-2-4-person-canopy-barrel-sauna",
+      "brand": "Almost Heaven",
+      "model": "Audra",
+      "title": "Audra 2-4 Person Canopy Barrel Sauna",
+      "category": "Traditional",
+      "placement": "Outdoor",
+      "capacity": 4,
+      "msrp": 7575.0,
+      "image": null,
+      "offers": [
+        {
+          "source": "Almost Heaven",
+          "price": 6060.0,
+          "url": "https://almostheaven.com/products/audra-2-4-person-canopy-barrel-sauna",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "almost-heaven-blackwater-4-person-cube-sauna",
+      "brand": "Almost Heaven",
+      "model": "BlackWater",
+      "title": "BlackWater 4 Person Cube Sauna",
+      "category": "Traditional",
+      "placement": "Outdoor",
+      "capacity": 4,
+      "msrp": 14085.0,
+      "image": null,
+      "offers": [
+        {
+          "source": "Almost Heaven",
+          "price": 9859.5,
+          "url": "https://almostheaven.com/products/blackwater-4-6-person-cube-sauna",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "almost-heaven-new-blackwater-1-2-person-mini-cube-sauna",
+      "brand": "Almost Heaven",
+      "model": "Blackwater",
+      "title": "NEW Blackwater 1-2 Person Mini-Cube Sauna",
+      "category": "Traditional",
+      "placement": "Outdoor",
+      "capacity": 2,
+      "msrp": 8397.0,
+      "image": null,
+      "offers": [
+        {
+          "source": "Almost Heaven",
+          "price": 5877.9,
+          "url": "https://almostheaven.com/products/blackwater-mini-cube-sauna",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "almost-heaven-charleston-4-person-canopy-barrel-sauna",
+      "brand": "Almost Heaven",
+      "model": "Charleston",
+      "title": "Charleston 4 Person Canopy Barrel Sauna",
+      "category": "Traditional",
+      "placement": "Outdoor",
+      "capacity": 4,
+      "msrp": 8932.0,
+      "image": null,
+      "offers": [
+        {
+          "source": "Almost Heaven",
+          "price": 8932.0,
+          "url": "https://almostheaven.com/products/charleston-4-person-canopy-barrel-sauna",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "almost-heaven-essex-4-person-barrel-sauna",
+      "brand": "Almost Heaven",
+      "model": "Essex",
+      "title": "Essex 4 Person Barrel Sauna",
+      "category": "Traditional",
+      "placement": "Outdoor",
+      "capacity": 4,
+      "msrp": 8548.0,
+      "image": null,
+      "offers": [
+        {
+          "source": "Almost Heaven",
+          "price": 8548.0,
+          "url": "https://almostheaven.com/products/essex-barrel-sauna",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "almost-heaven-grandview-4-6-person-canopy-barrel-sauna",
+      "brand": "Almost Heaven",
+      "model": "Grandview",
+      "title": "Grandview 4-6 Person Canopy Barrel Sauna",
+      "category": "Traditional",
+      "placement": "Outdoor",
+      "capacity": 6,
+      "msrp": 9083.0,
+      "image": null,
+      "offers": [
+        {
+          "source": "Almost Heaven",
+          "price": 6358.1,
+          "url": "https://almostheaven.com/products/grandview-4-6-person-canopy-barrel-sauna",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "almost-heaven-huntington-4-6-person-canopy-barrel-sauna",
+      "brand": "Almost Heaven",
+      "model": "Huntington",
+      "title": "Huntington 4-6 Person Canopy Barrel Sauna",
+      "category": "Traditional",
+      "placement": "Outdoor",
+      "capacity": 6,
+      "msrp": 8932.0,
+      "image": null,
+      "offers": [
+        {
+          "source": "Almost Heaven",
+          "price": 6252.4,
+          "url": "https://almostheaven.com/products/huntington-4-6-person-canopy-barrel-sauna",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "almost-heaven-pinnacle-4-person-barrel-sauna",
+      "brand": "Almost Heaven",
+      "model": "Pinnacle",
+      "title": "Pinnacle 4 Person Barrel Sauna",
+      "category": "Traditional",
+      "placement": "Outdoor",
+      "capacity": 4,
+      "msrp": 7575.0,
+      "image": null,
+      "offers": [
+        {
+          "source": "Almost Heaven",
+          "price": 5302.5,
+          "url": "https://almostheaven.com/products/pinnacle-4-person-barrel-sauna",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "almost-heaven-princeton-6-person-barrel-sauna",
+      "brand": "Almost Heaven",
+      "model": "Princeton",
+      "title": "Princeton 6 Person Barrel Sauna",
+      "category": "Traditional",
+      "placement": "Outdoor",
+      "capacity": 6,
+      "msrp": 8932.0,
+      "image": null,
+      "offers": [
+        {
+          "source": "Almost Heaven",
+          "price": 8932.0,
+          "url": "https://almostheaven.com/products/princeton-6-person-barrel-sauna",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "almost-heaven-salem-2-person-barrel-sauna",
+      "brand": "Almost Heaven",
+      "model": "Salem",
+      "title": "Salem 2 Person Barrel Sauna",
+      "category": "Traditional",
+      "placement": "Outdoor",
+      "capacity": 2,
+      "msrp": 4485.0,
+      "image": null,
+      "offers": [
+        {
+          "source": "Almost Heaven",
+          "price": 4036.5,
+          "url": "https://almostheaven.com/products/salem-2-person-barrel-sauna",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "almost-heaven-shenandoah-4-person-barrel-sauna",
+      "brand": "Almost Heaven",
+      "model": "Shenandoah",
+      "title": "Shenandoah 4 Person Barrel Sauna",
+      "category": "Traditional",
+      "placement": "Outdoor",
+      "capacity": 4,
+      "msrp": 10650.0,
+      "image": null,
+      "offers": [
+        {
+          "source": "Almost Heaven",
+          "price": 10650.0,
+          "url": "https://almostheaven.com/products/shenandoah-4-person-barrel",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "almost-heaven-vienna-2-person-canopy-barrel-sauna",
+      "brand": "Almost Heaven",
+      "model": "Vienna",
+      "title": "Vienna 2 Person Canopy Barrel Sauna",
+      "category": "Traditional",
+      "placement": "Outdoor",
+      "capacity": 2,
+      "msrp": 5184.0,
+      "image": null,
+      "offers": [
+        {
+          "source": "Almost Heaven",
+          "price": 5184.0,
+          "url": "https://almostheaven.com/products/vienna-2-person-canopy-barrel-sauna",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "almost-heaven-watoga-2-4-person-barrel-sauna",
+      "brand": "Almost Heaven",
+      "model": "Watoga",
+      "title": "Watoga 2-4 Person Barrel Sauna",
+      "category": "Traditional",
+      "placement": "Outdoor",
+      "capacity": 4,
+      "msrp": 5184.0,
+      "image": null,
+      "offers": [
+        {
+          "source": "Almost Heaven",
+          "price": 5184.0,
+          "url": "https://almostheaven.com/products/watoga-2-4-person-barrel-sauna",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "auroom-arti-modern-outdoor-luxury-cabin-sauna",
+      "brand": "Auroom",
+      "model": "Arti",
+      "title": "Arti Modern Outdoor Luxury Cabin Sauna",
+      "category": "Traditional",
+      "placement": "Outdoor",
+      "capacity": null,
+      "msrp": null,
+      "image": null,
+      "offers": [
+        {
+          "source": "Northern Saunas",
+          "price": 40790.0,
+          "url": "https://northernsaunas.com/products/auroom-arti-outdoor-cabin-sauna",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "auroom-aura-modern-outdoor-sauna",
+      "brand": "Auroom",
+      "model": "Aura",
+      "title": "Aura Modern Outdoor Sauna",
+      "category": "Traditional",
+      "placement": "Outdoor",
+      "capacity": null,
+      "msrp": null,
+      "image": null,
+      "offers": [
+        {
+          "source": "Northern Saunas",
+          "price": 18490.0,
+          "url": "https://northernsaunas.com/products/auroom-aura-modern-outdoor-sauna",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "auroom-baia-ergonomic-finnish-sauna-with-wave-benches",
+      "brand": "Auroom",
+      "model": "Baia",
+      "title": "Baia Ergonomic Finnish Sauna With Wave Benches",
+      "category": "Traditional",
+      "placement": "Indoor",
+      "capacity": null,
+      "msrp": null,
+      "image": null,
+      "offers": [
+        {
+          "source": "Northern Saunas",
+          "price": 9290.0,
+          "url": "https://northernsaunas.com/products/baia-sauna-by-auroom",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "auroom-familia-indoor-finnish-sauna-kit",
+      "brand": "Auroom",
+      "model": "Familia",
+      "title": "Familia Indoor Finnish Sauna Kit",
+      "category": "Traditional",
+      "placement": "Indoor",
+      "capacity": null,
+      "msrp": null,
+      "image": null,
+      "offers": [
+        {
+          "source": "Northern Saunas",
+          "price": 11990.0,
+          "url": "https://northernsaunas.com/products/auroom-familia-cabin-sauna-kit",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "auroom-libera-glass-indoor-modern-sauna",
+      "brand": "Auroom",
+      "model": "Libera Glass",
+      "title": "Libera Glass Indoor Modern Sauna",
+      "category": "Traditional",
+      "placement": "Indoor",
+      "capacity": null,
+      "msrp": null,
+      "image": null,
+      "offers": [
+        {
+          "source": "Northern Saunas",
+          "price": 15490.0,
+          "url": "https://northernsaunas.com/products/libera-glass-indoor-modern-sauna-by-auroom",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "auroom-mira-s-modern-outdoor-sauna",
+      "brand": "Auroom",
+      "model": "Mira S",
+      "title": "Mira S Modern Outdoor Sauna",
+      "category": "Traditional",
+      "placement": "Outdoor",
+      "capacity": 2,
+      "msrp": 15990.0,
+      "image": null,
+      "offers": [
+        {
+          "source": "Northern Saunas",
+          "price": 14990.0,
+          "url": "https://northernsaunas.com/products/auroom-mira-outdoor-home-sauna-kit",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "auroom-vulcana-indoor-modern-sauna",
+      "brand": "Auroom",
+      "model": "Vulcana",
+      "title": "Vulcana Indoor Modern Sauna",
+      "category": "Traditional",
+      "placement": "Indoor",
+      "capacity": null,
+      "msrp": 15900.0,
+      "image": null,
+      "offers": [
+        {
+          "source": "Northern Saunas",
+          "price": 14900.0,
+          "url": "https://northernsaunas.com/products/auroom-vulcana-cabin-sauna",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
     {
       "model_key": "leisurecraft-serenity-barrel-sauna-fits-3-4-people",
       "brand": "Dundalk Leisurecraft",
@@ -18,7 +418,7 @@
           "price": 5724.0,
           "url": "https://inhousewellness.com/products/leisurecraft-serenity",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -38,7 +438,7 @@
           "price": 6825.0,
           "url": "https://inhousewellness.com/products/leisurecraft-luna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -58,7 +458,7 @@
           "price": 6782.5,
           "url": "https://inhousewellness.com/products/leisurecraft-timber-harmony-4-person-outdoor-barrel-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -78,7 +478,7 @@
           "price": 7353.13,
           "url": "https://inhousewellness.com/products/leisurecraft-tranquility-barrel-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -98,7 +498,7 @@
           "price": 7085.63,
           "url": "https://inhousewellness.com/products/leisurecraft-granby-2-3-person-cabin-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -118,7 +518,7 @@
           "price": 6478.0,
           "url": "https://inhousewellness.com/products/leisurecraft-ct-minipod-sauna-fits-3-4-people",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -138,7 +538,7 @@
           "price": 6953.0,
           "url": "https://inhousewellness.com/products/ct-georgian-cabin-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -158,12 +558,12 @@
           "price": 1999.0,
           "url": "https://inhousewellness.com/products/dynamic-avila-2-sauna-infrared",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
     {
-      "model_key": "dyn-6103-01",
+      "model_key": "dyn-6103-01-elite",
       "brand": "Dynamic Saunas",
       "model": "DYN-6103-01 Elite",
       "title": "Dynamic Saunas Avila DYN-6103-01 Elite – 1-2 Person Ultra-Low EMF FAR Infrared Sauna",
@@ -178,7 +578,14 @@
           "price": 2299.0,
           "url": "https://inhousewellness.com/products/dynamic-saunas-avila-elite",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
+        },
+        {
+          "source": "Golden Design Saunas",
+          "price": 2705.0,
+          "url": "https://goldendesignsaunas.com/products/golden-designs-sauna-dyn-6103-01-elite",
+          "featured": false,
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -198,12 +605,12 @@
           "price": 1999.0,
           "url": "https://inhousewellness.com/products/1-2-person-infrared-sauna-model-number-low-emf-hemlock-bluetooth",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
     {
-      "model_key": "dyn-6106-01",
+      "model_key": "dyn-6106-01-elite",
       "brand": "Dynamic Saunas",
       "model": "DYN-6106-01 Elite",
       "title": "Dynamic Ultra Low EMF Far Infrared Sauna - Barcelona Elite Edition",
@@ -218,7 +625,14 @@
           "price": 2299.0,
           "url": "https://inhousewellness.com/products/dynamic-ultra-low-emf-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
+        },
+        {
+          "source": "Golden Design Saunas",
+          "price": 2705.0,
+          "url": "https://goldendesignsaunas.com/products/golden-designs-sauna-dyn-6106-01-elite",
+          "featured": false,
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -238,7 +652,14 @@
           "price": 2299.0,
           "url": "https://inhousewellness.com/products/dynamic-saunas-dyn-6115-05-veneto",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
+        },
+        {
+          "source": "Golden Design Saunas",
+          "price": 2706.0,
+          "url": "https://goldendesignsaunas.com/products/golden-designs-sauna-dyn-6115-05",
+          "featured": false,
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -258,7 +679,7 @@
           "price": 1999.0,
           "url": "https://inhousewellness.com/products/1-2-person-infrared-sauna-hemlock-chromotherapy",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -278,12 +699,26 @@
           "price": 3999.0,
           "url": "https://inhousewellness.com/products/gracia-ultra-lowemf-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
+        },
+        {
+          "source": "Golden Design Saunas",
+          "price": 2706.45,
+          "url": "https://goldendesignsaunas.com/products/golden-designs-sauna-dyn-6119-01-elite",
+          "featured": false,
+          "observed": "2026-08-14"
+        },
+        {
+          "source": "Green Vista Living",
+          "price": 2706.45,
+          "url": "https://greenvistaliving.com/products/golden-designs-sauna-dyn-6119-01-elite",
+          "featured": false,
+          "observed": "2026-08-14"
         }
       ]
     },
     {
-      "model_key": "dyn-6119-03",
+      "model_key": "dyn-6119-03-fs",
       "brand": "Dynamic Saunas",
       "model": "DYN-6119-03 FS",
       "title": "Dynamic Saunas DYN-6119-03 FS Gracia 2 Person Full Spectrum Near Zero EMF Far Infrared Sauna",
@@ -298,7 +733,7 @@
           "price": 2899.0,
           "url": "https://inhousewellness.com/products/dynamic-saunas-dyn-6119-03-fs-gracia",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -318,12 +753,19 @@
           "price": 2299.0,
           "url": "https://inhousewellness.com/products/dynamic-infrared-sauna-versailles",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
+        },
+        {
+          "source": "Golden Design Saunas",
+          "price": 2705.0,
+          "url": "https://goldendesignsaunas.com/products/golden-designs-sauna-dyn-6202-03",
+          "featured": false,
+          "observed": "2026-08-14"
         }
       ]
     },
     {
-      "model_key": "dyn-6203-01",
+      "model_key": "dyn-6203-01-elite",
       "brand": "Dynamic Saunas",
       "model": "DYN-6203-01 Elite",
       "title": "Dynamic Saunas Cardoba 2-Person Ultra Low EMF FAR Infrared Sauna",
@@ -338,7 +780,7 @@
           "price": 2499.0,
           "url": "https://inhousewellness.com/products/dynamic-cardoba-2-infrared-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -358,7 +800,14 @@
           "price": 2299.0,
           "url": "https://inhousewellness.com/products/santiago-low-emf-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
+        },
+        {
+          "source": "Golden Design Saunas",
+          "price": 2705.0,
+          "url": "https://goldendesignsaunas.com/products/golden-designs-sauna-dyn-6209-01",
+          "featured": false,
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -378,12 +827,12 @@
           "price": 2499.0,
           "url": "https://inhousewellness.com/products/dynamic-infrared-sauna-venice-edition",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
     {
-      "model_key": "dyn-6210-01",
+      "model_key": "dyn-6210-01-elite",
       "brand": "Dynamic Saunas",
       "model": "DYN-6210-01 Elite",
       "title": "Dynamic Saunas DYN-6210-01 Elite Venice 2-Person Ultra Low EMF FAR Infrared Sauna",
@@ -398,14 +847,14 @@
           "price": 2699.0,
           "url": "https://inhousewellness.com/products/dynamic-venice-elite",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
     {
-      "model_key": "dyn-6215-03",
+      "model_key": "dyn-6215-03-fs",
       "brand": "Dynamic Saunas",
-      "model": "DYN-6215-03",
+      "model": "DYN-6215-03-FS",
       "title": "Dynamic Llumeneres DYN-6215-03 FS Full Spectrum Near Zero EMF 2 Person Sauna",
       "category": "Infrared",
       "placement": "Indoor",
@@ -418,7 +867,7 @@
           "price": 3699.0,
           "url": "https://inhousewellness.com/products/dynamic-llumeneres-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -438,12 +887,19 @@
           "price": 2899.0,
           "url": "https://inhousewellness.com/products/dynamic-saunas-dyn-6215-05-lucca",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
+        },
+        {
+          "source": "Golden Design Saunas",
+          "price": 3412.0,
+          "url": "https://goldendesignsaunas.com/products/golden-designs-sauna-dyn-6215-05",
+          "featured": false,
+          "observed": "2026-08-14"
         }
       ]
     },
     {
-      "model_key": "dyn-6215-05",
+      "model_key": "dyn-6215-05-elite",
       "brand": "Dynamic Saunas",
       "model": "DYN-6215-05 Elite",
       "title": "Dynamic Saunas DYN-6215-05 Elite Lucca 2 Person Ultra Low EMF Far Infrared Sauna",
@@ -458,7 +914,14 @@
           "price": 3299.0,
           "url": "https://inhousewellness.com/products/dynamic-saunas-dyn-6215-05-elite-lucca",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
+        },
+        {
+          "source": "Golden Design Saunas",
+          "price": 3882.0,
+          "url": "https://goldendesignsaunas.com/products/golden-designs-sauna-dyn-6215-05-elite",
+          "featured": false,
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -478,12 +941,12 @@
           "price": 2699.0,
           "url": "https://inhousewellness.com/products/dynamic-saunas-vittoria-dyn-6220-01",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
     {
-      "model_key": "dyn-6220-01",
+      "model_key": "dyn-6220-01-elite",
       "brand": "Dynamic Saunas",
       "model": "DYN-6220-01 Elite",
       "title": "Dynamic Saunas DYN-6220-01 Elite Vittoria 2 Person Ultra Low EMF Far Infrared Sauna",
@@ -498,7 +961,7 @@
           "price": 2899.0,
           "url": "https://inhousewellness.com/products/dynamic-saunas-dyn-6220-01-elite-vittoria",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -518,12 +981,19 @@
           "price": 2699.0,
           "url": "https://inhousewellness.com/products/dynamic-low-infrared-sauna-heming",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
+        },
+        {
+          "source": "Golden Design Saunas",
+          "price": 3176.0,
+          "url": "https://goldendesignsaunas.com/products/golden-designs-sauna-dyn-6225-02",
+          "featured": false,
+          "observed": "2026-08-14"
         }
       ]
     },
     {
-      "model_key": "dyn-6225-02",
+      "model_key": "dyn-6225-02-elite",
       "brand": "Dynamic Saunas",
       "model": "DYN-6225-02 Elite",
       "title": "Dynamic Heming Elite 2-Person Corner Ultra Low EMF FAR Infrared Sauna",
@@ -538,7 +1008,14 @@
           "price": 2999.0,
           "url": "https://inhousewellness.com/products/dynamic-saunas-heming",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
+        },
+        {
+          "source": "Golden Designs Inc",
+          "price": 5999.0,
+          "url": "https://goldendesigninc.com/products/dyn-6225-02-dynamic-low-emf-far-infrared-sauna-heming-edition-copy",
+          "featured": false,
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -558,12 +1035,19 @@
           "price": 2299.0,
           "url": "https://inhousewellness.com/products/dynamic-saunas-dyn-6229-01-serena",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
+        },
+        {
+          "source": "Golden Design Saunas",
+          "price": 2706.0,
+          "url": "https://goldendesignsaunas.com/products/golden-designs-sauna-dyn-6229-01",
+          "featured": false,
+          "observed": "2026-08-14"
         }
       ]
     },
     {
-      "model_key": "dyn-6229-03",
+      "model_key": "dyn-6229-03-fs",
       "brand": "Dynamic Saunas",
       "model": "DYN-6229-03 FS",
       "title": "Dynamic Saunas DYN-6229-03 FS Serena 2 Person Full Spectrum Infrared Sauna",
@@ -578,7 +1062,7 @@
           "price": 3299.0,
           "url": "https://inhousewellness.com/products/dynamic-saunas-dyn-6229-03-fs-serena",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -598,7 +1082,7 @@
           "price": 3299.0,
           "url": "https://inhousewellness.com/products/dynamic-saunas-dyn-6315-05-toscana",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -618,12 +1102,26 @@
           "price": 2699.0,
           "url": "https://inhousewellness.com/products/dynamic-saunas-lugano-infrared-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
+        },
+        {
+          "source": "Green Vista Living",
+          "price": 3176.0,
+          "url": "https://greenvistaliving.com/products/golden-designs-sauna-dyn-6336-02",
+          "featured": false,
+          "observed": "2026-08-14"
+        },
+        {
+          "source": "Golden Designs Inc",
+          "price": 5999.0,
+          "url": "https://goldendesigninc.com/products/new-2019-model-dyn-6336-01-dynamic-low-emf-far-infrared-sauna-lugano-edition",
+          "featured": false,
+          "observed": "2026-08-14"
         }
       ]
     },
     {
-      "model_key": "dyn-6336-02",
+      "model_key": "dyn-6336-02-elite",
       "brand": "Dynamic Saunas",
       "model": "DYN-6336-02 Elite",
       "title": "Dynamic Lugano \"Elite\" 3-Person Ultra Low EMF FAR Infrared Sauna – Canadian Hemlock",
@@ -638,7 +1136,21 @@
           "price": 3499.0,
           "url": "https://inhousewellness.com/products/dynamic-lugano-infrared-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
+        },
+        {
+          "source": "Green Vista Living",
+          "price": 4117.0,
+          "url": "https://greenvistaliving.com/products/golden-designs-sauna-dyn-6336-02-elite",
+          "featured": false,
+          "observed": "2026-08-14"
+        },
+        {
+          "source": "Golden Designs Inc",
+          "price": 6999.0,
+          "url": "https://goldendesigninc.com/products/updated-2023-model-dyn-6336-02-dynamic-ultra-low-emf-far-infrared-sauna-lugano-edition",
+          "featured": false,
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -658,12 +1170,12 @@
           "price": 3299.0,
           "url": "https://inhousewellness.com/products/dynamic-saunas-bergamo",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
     {
-      "model_key": "dyn-6996-01",
+      "model_key": "dyn-6996-01-elite",
       "brand": "Dynamic Saunas",
       "model": "DYN-6996-01 Elite",
       "title": "Dynamic Monaco 6-person Ultra Low EMF (Under 3MG) FAR Infrared Sauna",
@@ -678,27 +1190,34 @@
           "price": 6499.0,
           "url": "https://inhousewellness.com/products/dynamic-saunas-monaco",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
     {
       "model_key": "gdi-6880-02-elite",
       "brand": "Golden Designs Inc",
-      "model": "GDI-6880-02-Elite",
-      "title": "Golden Designs Catalonia GDI-6880-02 Elite Near Zero EMF FAR Infrared Sauna (8-Person)",
+      "model": "GDI-6880-02 Elite",
+      "title": "Golden Designs GDI-6880-02 Elite Catalonia 8 Person Ultra Low EMF Far Infrared Sauna",
       "category": "Infrared",
       "placement": "Indoor",
       "capacity": 8,
-      "msrp": 19500.0,
-      "image": "https://cdn.shopify.com/s/files/1/0672/9757/4979/files/DYN-6880-01_1_5b52becd-64aa-4bd1-bfe2-2e97df739fbc.webp?v=1770887025",
+      "msrp": 14999.0,
+      "image": "https://cdn.shopify.com/s/files/1/0672/9757/4979/files/DYN-6880-01_Catalonia_-_8_Per_-_Yoga_BG_3Kx3K.webp?v=1770885749",
       "offers": [
+        {
+          "source": "InHouse Wellness",
+          "price": 9999.0,
+          "url": "https://inhousewellness.com/products/golden-designs-gdi-6880-02-elite-catalonia",
+          "featured": true,
+          "observed": "2026-08-14"
+        },
         {
           "source": "InHouse Wellness",
           "price": 14999.0,
           "url": "https://inhousewellness.com/products/catalonia-8p-infrared-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -718,7 +1237,7 @@
           "price": 8999.0,
           "url": "https://inhousewellness.com/products/gdi-6996-elite-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -738,7 +1257,7 @@
           "price": 6999.0,
           "url": "https://inhousewellness.com/products/golden-designs-monaco-limited",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -758,7 +1277,7 @@
           "price": 5999.0,
           "url": "https://inhousewellness.com/products/hanko-steam-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -778,7 +1297,7 @@
           "price": 6999.0,
           "url": "https://inhousewellness.com/products/golden-designs-forssa-traditional-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -798,7 +1317,7 @@
           "price": 8499.0,
           "url": "https://inhousewellness.com/products/kuusamo-6-person-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -818,7 +1337,7 @@
           "price": 5999.0,
           "url": "https://inhousewellness.com/products/golden-designs-sundsvall",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -838,7 +1357,7 @@
           "price": 6999.0,
           "url": "https://inhousewellness.com/products/golden-designs-copenhagen",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -858,7 +1377,7 @@
           "price": 6999.0,
           "url": "https://inhousewellness.com/products/golden-designs-arlberg",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -878,7 +1397,7 @@
           "price": 7999.0,
           "url": "https://inhousewellness.com/products/vorarlberg-outdoor-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -898,7 +1417,7 @@
           "price": 3999.0,
           "url": "https://inhousewellness.com/products/golden-designs-infrared-himalayan",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -918,7 +1437,7 @@
           "price": 5499.0,
           "url": "https://inhousewellness.com/products/golden-designs-full-spectrum-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -938,7 +1457,7 @@
           "price": 6999.0,
           "url": "https://inhousewellness.com/products/goldendesigns-carinthia-hybrid-outdoor-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -958,7 +1477,7 @@
           "price": 7999.0,
           "url": "https://inhousewellness.com/products/goldendesigns-gargellen-hybrid-outdoor-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -978,7 +1497,7 @@
           "price": 11999.0,
           "url": "https://inhousewellness.com/products/golden-designs-narvick",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -998,7 +1517,7 @@
           "price": 13999.0,
           "url": "https://inhousewellness.com/products/golden-designs-drammen",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1018,7 +1537,7 @@
           "price": 15999.0,
           "url": "https://inhousewellness.com/products/golden-designs-6-person-traditional-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1038,7 +1557,7 @@
           "price": 14999.0,
           "url": "https://inhousewellness.com/products/golden-designs-nora-hybrid",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1058,7 +1577,7 @@
           "price": 16999.0,
           "url": "https://inhousewellness.com/products/goldendesigns-visby-3-person-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1078,7 +1597,7 @@
           "price": 5499.0,
           "url": "https://inhousewellness.com/products/golden-designs-gdi-8230",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1098,7 +1617,7 @@
           "price": 7499.0,
           "url": "https://inhousewellness.com/products/gdi-8260-full-spectrum",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1118,7 +1637,7 @@
           "price": 7999.0,
           "url": "https://inhousewellness.com/products/golden-designs-soria-hybrid-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1138,7 +1657,7 @@
           "price": 9999.0,
           "url": "https://inhousewellness.com/products/golden-designs-toledo",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1158,7 +1677,7 @@
           "price": 15999.0,
           "url": "https://inhousewellness.com/products/kaarina-6-person-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1178,7 +1697,7 @@
           "price": 18999.0,
           "url": "https://inhousewellness.com/products/kaskinen-6-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1198,7 +1717,7 @@
           "price": 4999.0,
           "url": "https://inhousewellness.com/products/golden-designs-st-moritz-barrel-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1218,7 +1737,107 @@
           "price": 5999.0,
           "url": "https://inhousewellness.com/products/arosa-4p-barrel-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "health-mate-elevated-health",
+      "brand": "Health Mate",
+      "model": "Elevated Health",
+      "title": "Elevated Health",
+      "category": "Infrared",
+      "placement": "Indoor",
+      "capacity": 4,
+      "msrp": null,
+      "image": "https://healthmatesauna.com/wp-content/uploads/2025/05/3-Healthmate-April-20232299-scaled.jpeg",
+      "offers": [
+        {
+          "source": "Health Mate",
+          "price": 8500.0,
+          "url": "https://healthmatesauna.com/product/elevated-health/",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "health-mate-enrich-2",
+      "brand": "Health Mate",
+      "model": "Enrich 2",
+      "title": "Enrich 2",
+      "category": "Infrared",
+      "placement": "Indoor",
+      "capacity": 2,
+      "msrp": null,
+      "image": "https://healthmatesauna.com/wp-content/uploads/2024/12/enrich-2.jpg",
+      "offers": [
+        {
+          "source": "Health Mate",
+          "price": 5300.0,
+          "url": "https://healthmatesauna.com/product/enrich-2/",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "health-mate-enrich-3",
+      "brand": "Health Mate",
+      "model": "Enrich 3",
+      "title": "Enrich 3",
+      "category": "Infrared",
+      "placement": "Indoor",
+      "capacity": 3,
+      "msrp": null,
+      "image": "https://healthmatesauna.com/wp-content/uploads/2024/12/Health-Mate-Feb-20220559-e-scaled.jpeg",
+      "offers": [
+        {
+          "source": "Health Mate",
+          "price": 5900.0,
+          "url": "https://healthmatesauna.com/product/enrich-3/",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "health-mate-inspire-2",
+      "brand": "Health Mate",
+      "model": "Inspire 2",
+      "title": "Inspire 2",
+      "category": "Infrared",
+      "placement": "Indoor",
+      "capacity": 2,
+      "msrp": null,
+      "image": "https://healthmatesauna.com/wp-content/uploads/2024/12/hms-inspire-2_0-main.webp",
+      "offers": [
+        {
+          "source": "Health Mate",
+          "price": 7400.0,
+          "url": "https://healthmatesauna.com/product/inspire-2/",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "health-mate-inspire-3",
+      "brand": "Health Mate",
+      "model": "Inspire 3",
+      "title": "Inspire 3",
+      "category": "Infrared",
+      "placement": "Indoor",
+      "capacity": 3,
+      "msrp": null,
+      "image": "https://healthmatesauna.com/wp-content/uploads/2024/12/inspire-3.jpg",
+      "offers": [
+        {
+          "source": "Health Mate",
+          "price": 8400.0,
+          "url": "https://healthmatesauna.com/product/inspire-3/",
+          "featured": false,
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1238,7 +1857,7 @@
           "price": 17866.67,
           "url": "https://inhousewellness.com/products/kohler-c1-k-38440",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1258,7 +1877,47 @@
           "price": 18666.67,
           "url": "https://inhousewellness.com/products/kohler-c1-k-39963-0fnc",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "leil-patio-m-outdoor-5-person-cabin-sauna-with-changing-room",
+      "brand": "Leil",
+      "model": "Patio M",
+      "title": "Patio M Outdoor 5-Person Cabin Sauna with Changing Room",
+      "category": "Traditional",
+      "placement": "Outdoor",
+      "capacity": 5,
+      "msrp": 16399.0,
+      "image": null,
+      "offers": [
+        {
+          "source": "Northern Saunas",
+          "price": 14935.0,
+          "url": "https://northernsaunas.com/products/patio-m-outdoor-cabin-sauna",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "leil-viva-210-modern-outdoor-3-person-sauna",
+      "brand": "Leil",
+      "model": "Viva 210",
+      "title": "Viva 210 Modern Outdoor 3-Person Sauna",
+      "category": "Traditional",
+      "placement": "Outdoor",
+      "capacity": 3,
+      "msrp": 15190.0,
+      "image": null,
+      "offers": [
+        {
+          "source": "Northern Saunas",
+          "price": 13190.0,
+          "url": "https://northernsaunas.com/products/viva-210-3-person-outdoor-sauna",
+          "featured": false,
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1278,7 +1937,7 @@
           "price": 5939.0,
           "url": "https://inhousewellness.com/products/mw12-thermowood-r-outdoor-sauna-2-3-person",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1298,7 +1957,7 @@
           "price": 6929.0,
           "url": "https://inhousewellness.com/products/mw16-thermowood",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1318,7 +1977,7 @@
           "price": 8099.0,
           "url": "https://inhousewellness.com/products/mw20-thermowood",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1338,7 +1997,14 @@
           "price": 2299.0,
           "url": "https://inhousewellness.com/products/maxxus-seattle-2-person-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
+        },
+        {
+          "source": "Golden Design Saunas",
+          "price": 2705.0,
+          "url": "https://goldendesignsaunas.com/products/golden-designs-sauna-mx-j206-01",
+          "featured": false,
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1358,7 +2024,14 @@
           "price": 2699.0,
           "url": "https://inhousewellness.com/products/maxxus-seattle-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
+        },
+        {
+          "source": "Golden Designs Inc",
+          "price": 4999.0,
+          "url": "https://goldendesigninc.com/products/maxxus-seattle-2-person-near-zero-emf-far-infrared-sauna-canadian-hemlock",
+          "featured": false,
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1378,7 +2051,7 @@
           "price": 2699.0,
           "url": "https://inhousewellness.com/products/maxxus-aspen-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1398,7 +2071,7 @@
           "price": 2699.0,
           "url": "https://inhousewellness.com/products/maxxus-bellevue-3-person-infrared-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1418,7 +2091,7 @@
           "price": 2899.0,
           "url": "https://inhousewellness.com/products/maxxus-bellevue-3-person-near-zero-emf-far-infrared-sauna-canadian-hemlock",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1438,7 +2111,7 @@
           "price": 2999.0,
           "url": "https://inhousewellness.com/products/maxxus-alpine",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1458,7 +2131,7 @@
           "price": 2699.0,
           "url": "https://inhousewellness.com/products/maxxus-2-person-sauna-hemlock",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1478,7 +2151,7 @@
           "price": 3099.0,
           "url": "https://inhousewellness.com/products/maxxus-mx-k206-01-zf",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1498,12 +2171,12 @@
           "price": 2999.0,
           "url": "https://inhousewellness.com/products/maxxus-3-person-sauna-hemlock",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
     {
-      "model_key": "mx-k306-01",
+      "model_key": "mx-k306-01-ced",
       "brand": "Maxxus",
       "model": "MX-K306-01 CED",
       "title": "Maxxus 3-Person Low EMF FAR Infrared Sauna - Canadian Red Cedar | Maxxus Sauna",
@@ -1518,27 +2191,14 @@
           "price": 4299.0,
           "url": "https://inhousewellness.com/products/maxxus-3-person-infrared-sauna",
           "featured": true,
-          "observed": "2026-08-10"
-        }
-      ]
-    },
-    {
-      "model_key": "mx-k306-01",
-      "brand": "Maxxus",
-      "model": "MX-K306-01 CED",
-      "title": "Maxxus 3-Person Low EMF (Under 8MG) FAR Infrared Sauna",
-      "category": "Infrared",
-      "placement": "Indoor",
-      "capacity": 3,
-      "msrp": 6499.0,
-      "image": "https://cdn.shopify.com/s/files/1/0672/9757/4979/files/MX-K306-01CedarTSBG3x3B.jpg?v=1770877382",
-      "offers": [
+          "observed": "2026-08-14"
+        },
         {
           "source": "InHouse Wellness",
           "price": 4299.0,
           "url": "https://inhousewellness.com/products/maxxus-3-person-low-emf-far-infrared-sauna-canadian-red-cedar",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1558,12 +2218,12 @@
           "price": 3699.0,
           "url": "https://inhousewellness.com/products/maxxus-mx-k306-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
     {
-      "model_key": "mx-k306-01-zf",
+      "model_key": "mx-k306-01-zf-ced",
       "brand": "Maxxus",
       "model": "MX-K306-01-ZF CED",
       "title": "Maxxus 3-Person Near Zero EMF FAR Infrared Sauna – Canadian Hemlock",
@@ -1578,7 +2238,7 @@
           "price": 4699.0,
           "url": "https://inhousewellness.com/products/maxxus-3-person-infrared-sauna-near-zero",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1598,12 +2258,12 @@
           "price": 3299.0,
           "url": "https://inhousewellness.com/products/maxxus-3-person-sauna-hemlock-ultralow",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
     {
-      "model_key": "mx-k356-01",
+      "model_key": "mx-k356-01-ced",
       "brand": "Maxxus",
       "model": "MX-K356-01 CED",
       "title": "Maxxus 3-Person Corner Low EMF FAR Infrared Sauna – Canadian Hemlock",
@@ -1618,27 +2278,14 @@
           "price": 4499.0,
           "url": "https://inhousewellness.com/products/maxxus-3-person-sauna-hemlock-1",
           "featured": true,
-          "observed": "2026-08-10"
-        }
-      ]
-    },
-    {
-      "model_key": "mx-k356-01",
-      "brand": "Maxxus",
-      "model": "MX-K356-01 CED",
-      "title": "Maxxus 3-Person Corner Low EMF (Under 2MG) FAR Infrared Sauna",
-      "category": "Infrared",
-      "placement": "Indoor",
-      "capacity": 3,
-      "msrp": 6999.0,
-      "image": "https://cdn.shopify.com/s/files/1/0672/9757/4979/files/maxxus-3-person-corner-low-emf-under-2mg-far-infrared-sauna-236266.jpg?v=1770877400",
-      "offers": [
+          "observed": "2026-08-14"
+        },
         {
           "source": "InHouse Wellness",
           "price": 4499.0,
           "url": "https://inhousewellness.com/products/maxxus-3-person-corner-2mg-infrared-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1658,12 +2305,12 @@
           "price": 3899.0,
           "url": "https://inhousewellness.com/products/maxxus-mx-k356-corner-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
     {
-      "model_key": "mx-k356-01-zf",
+      "model_key": "mx-k356-01-zf-ced",
       "brand": "Maxxus",
       "model": "MX-K356-01-ZF CED",
       "title": "Maxxus 3-Person Corner Near Zero EMF FAR Infrared Sauna – Canadian Hemlock",
@@ -1678,7 +2325,7 @@
           "price": 4899.0,
           "url": "https://inhousewellness.com/products/maxxus-3-person-corner-sauna-hemlock",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1698,12 +2345,12 @@
           "price": 3699.0,
           "url": "https://inhousewellness.com/products/maxxus-4-person-sauna-hemlock",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
     {
-      "model_key": "mx-k406-01",
+      "model_key": "mx-k406-01-ced",
       "brand": "Maxxus",
       "model": "MX-K406-01 CED",
       "title": "Maxxus MX-K406-01 CED 4-Person Low EMF FAR Infrared Sauna, Canadian Red Cedar",
@@ -1718,12 +2365,12 @@
           "price": 4699.0,
           "url": "https://inhousewellness.com/products/maxxus-4-person-sauna-cedar",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
     {
-      "model_key": "mx-k406-01-zf",
+      "model_key": "mx-k406-01-zf-ced",
       "brand": "Maxxus",
       "model": "MX-K406-01-ZF CED",
       "title": "Maxxus Chaumont Near Zero EMF Infrared Sauna 4-Person",
@@ -1738,12 +2385,12 @@
           "price": 5499.0,
           "url": "https://inhousewellness.com/products/maxxus-chaumont-edition-far-infrared-sauna-corner-unit-4-person-low-emf-red-cedar",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
     {
-      "model_key": "mx-k406-01-zf",
+      "model_key": "mx-k406-01-zf-hem",
       "brand": "Maxxus",
       "model": "MX-K406-01-ZF HEM",
       "title": "Maxxus MX-K406-01-ZF HEM 4-Person Near Zero EMF FAR IR Sauna 2.1 kW",
@@ -1758,12 +2405,12 @@
           "price": 6999.0,
           "url": "https://inhousewellness.com/products/maxxus-mx-k406-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
     {
-      "model_key": "mx-m206-01-fs",
+      "model_key": "mx-m206-01-fs-ced",
       "brand": "Maxxus",
       "model": "MX-M206-01-FS CED",
       "title": "Maxxus 2-Person Full Spectrum Near Zero EMF FAR Infrared Sauna – Canadian Red Cedar",
@@ -1778,12 +2425,12 @@
           "price": 4299.0,
           "url": "https://inhousewellness.com/products/maxxus-2-person-sauna-full-spectrum",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
     {
-      "model_key": "mx-m306-01-fs",
+      "model_key": "mx-m306-01-fs-ced",
       "brand": "Maxxus",
       "model": "MX-M306-01-FS CED",
       "title": "Maxxus 3-Person Full Spectrum Near Zero EMF FAR Infrared Sauna – Canadian Red Cedar",
@@ -1798,7 +2445,7 @@
           "price": 4899.0,
           "url": "https://inhousewellness.com/products/maxxus-3-person-sauna-full-spectrum",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1818,7 +2465,7 @@
           "price": 5299.0,
           "url": "https://inhousewellness.com/products/maxxus-mx-m356-01-fs-ced",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1838,7 +2485,7 @@
           "price": 2299.0,
           "url": "https://inhousewellness.com/products/maxxus-mx-s106-01",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1858,7 +2505,7 @@
           "price": 2899.0,
           "url": "https://inhousewellness.com/products/maxxus-s-line-mx-s206-01",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1878,7 +2525,7 @@
           "price": 6999.0,
           "url": "https://inhousewellness.com/products/maxxus-s206-elite-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1898,7 +2545,7 @@
           "price": 7999.0,
           "url": "https://inhousewellness.com/products/maxxus-sline-elite-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1918,7 +2565,7 @@
           "price": 7799.0,
           "url": "https://inhousewellness.com/products/medical-sauna-traditional5",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1938,7 +2585,7 @@
           "price": 8799.0,
           "url": "https://inhousewellness.com/products/medical-sauna-traditional6",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1958,7 +2605,7 @@
           "price": 10799.0,
           "url": "https://inhousewellness.com/products/medical-sauna-traditional7",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1978,7 +2625,487 @@
           "price": 13649.0,
           "url": "https://inhousewellness.com/products/medical-sauna-traditional8",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "peak-saunas-denali-3-person-full-spectrum-infrared-sauna",
+      "brand": "Peak Saunas",
+      "model": "Denali",
+      "title": "Denali 3-Person Full Spectrum Infrared Sauna",
+      "category": "Infrared",
+      "placement": "Indoor",
+      "capacity": 3,
+      "msrp": 12995.0,
+      "image": "https://peaksaunas.com/cdn/shop/files/Denali_01.png?v=1778549720&width=1816",
+      "offers": [
+        {
+          "source": "Peak Saunas",
+          "price": 9750.0,
+          "url": "https://peaksaunas.com/products/peak-saunas-denali-3-person-full-spectrum-infrared-sauna-with-two-xl-medical-grade-red-light-therapy-smart-wifi-app-control",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "peak-saunas-el-capitan-4-person-outdoor-full-spectrum-infrared-sauna",
+      "brand": "Peak Saunas",
+      "model": "El Capitan",
+      "title": "El Capitan 4-Person Outdoor Full Spectrum Infrared Sauna",
+      "category": "Infrared",
+      "placement": "Outdoor",
+      "capacity": 4,
+      "msrp": 19995.0,
+      "image": "https://peaksaunas.com/cdn/shop/files/El_Capitan_03_cdd6ca5d-2637-457e-97df-e0694b20f122.png?v=1778549953&width=1745",
+      "offers": [
+        {
+          "source": "Peak Saunas",
+          "price": 16750.0,
+          "url": "https://peaksaunas.com/products/peak-saunas-el-capitan-4-person-outdoor-full-spectrum-infrared-sauna-with-smart-wifi-app-control",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "peak-saunas-everest-2-person-indoor-full-spectrum-infrared-sauna",
+      "brand": "Peak Saunas",
+      "model": "Everest",
+      "title": "Everest 2-Person Indoor Full Spectrum Infrared Sauna",
+      "category": "Infrared",
+      "placement": "Indoor",
+      "capacity": 2,
+      "msrp": 9495.0,
+      "image": "https://peaksaunas.com/cdn/shop/files/Everest_6f826c18-4815-4ef2-8420-a45bd5465798.png?v=1778549898&width=1781",
+      "offers": [
+        {
+          "source": "Peak Saunas",
+          "price": 7950.0,
+          "url": "https://peaksaunas.com/products/peak-saunas-everest-2-person-indoor-near-zero-emf-full-spectrum-infrared-sauna-with-medical-grade-red-light-therapy",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "peak-saunas-fuji-2-person-indoor-full-spectrum-infrared-sauna",
+      "brand": "Peak Saunas",
+      "model": "Fuji",
+      "title": "Fuji 2-Person Indoor Full Spectrum Infrared Sauna",
+      "category": "Infrared",
+      "placement": "Indoor",
+      "capacity": 2,
+      "msrp": 9995.0,
+      "image": "https://peaksaunas.com/cdn/shop/files/Fuji_34500b66-acc8-4a10-b433-9781b05be7aa.png?v=1778549846&width=1791",
+      "offers": [
+        {
+          "source": "Peak Saunas",
+          "price": 8250.0,
+          "url": "https://peaksaunas.com/products/peak-saunas-fuji-2-person-indoor-near-zero-emf-full-spectrum-infrared-sauna-with-medical-grade-red-light-therapy",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "peak-saunas-kilimanjaro-5-person-outdoor-full-spectrum-infrared-sauna",
+      "brand": "Peak Saunas",
+      "model": "Kilimanjaro",
+      "title": "Kilimanjaro 5-Person Outdoor Full Spectrum Infrared Sauna",
+      "category": "Infrared",
+      "placement": "Outdoor",
+      "capacity": 5,
+      "msrp": 15995.0,
+      "image": "https://peaksaunas.com/cdn/shop/files/WhatsApp_Image_2025-08-26_at_11.43.21_1.jpg?v=1756854227&width=1292",
+      "offers": [
+        {
+          "source": "Peak Saunas",
+          "price": 13450.0,
+          "url": "https://peaksaunas.com/products/peak-saunas-kilimanjaro-5-person-outdoor-full-spectrum-infrared-sauna-with-smart-wifi-app-control",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "peak-saunas-matterhorn-3-person-full-spectrum-infrared-sauna",
+      "brand": "Peak Saunas",
+      "model": "Matterhorn",
+      "title": "Matterhorn 3-Person Full Spectrum Infrared Sauna",
+      "category": "Infrared",
+      "placement": "Indoor",
+      "capacity": 3,
+      "msrp": 13995.0,
+      "image": "https://peaksaunas.com/cdn/shop/files/Matterhorn_01.png?v=1778549675&width=1796",
+      "offers": [
+        {
+          "source": "Peak Saunas",
+          "price": 10750.0,
+          "url": "https://peaksaunas.com/products/peak-saunas-matterhorn-3-person-full-spectrum-infrared-sauna-with-two-xl-medical-grade-red-light-therapy-smart-wifi-app-control",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "peak-saunas-mini-1-person-indoor-full-spectrum-infrared-sauna",
+      "brand": "Peak Saunas",
+      "model": "Mini",
+      "title": "Mini 1-Person Indoor Full Spectrum Infrared Sauna",
+      "category": "Infrared",
+      "placement": "Indoor",
+      "capacity": 1,
+      "msrp": 7295.0,
+      "image": "https://peaksaunas.com/cdn/shop/files/IMG-8472.png?v=1782200866&width=2000",
+      "offers": [
+        {
+          "source": "Peak Saunas",
+          "price": 5450.0,
+          "url": "https://peaksaunas.com/products/peak-saunas-mini-1-person-indoor-full-spectrum-infrared-sauna-with-medical-grade-red-light-therapy",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "peak-saunas-patagonia-2-person-outdoor-full-spectrum-infrared-sauna",
+      "brand": "Peak Saunas",
+      "model": "Patagonia",
+      "title": "Patagonia 2-Person Outdoor Full Spectrum Infrared Sauna",
+      "category": "Infrared",
+      "placement": "Outdoor",
+      "capacity": 2,
+      "msrp": 13995.0,
+      "image": "https://peaksaunas.com/cdn/shop/files/Patagonia_01_1.png?v=1776186810&width=2000",
+      "offers": [
+        {
+          "source": "Peak Saunas",
+          "price": 10750.0,
+          "url": "https://peaksaunas.com/products/peak-saunas-patagonia-2-person-outdoor-full-spectrum-infrared-sauna-with-smart-wifi-app-control",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "peak-saunas-rainier-1-person-indoor-full-spectrum-infrared-sauna",
+      "brand": "Peak Saunas",
+      "model": "Rainier",
+      "title": "Rainier 1-Person Indoor Full Spectrum Infrared Sauna",
+      "category": "Infrared",
+      "placement": "Indoor",
+      "capacity": 1,
+      "msrp": 8995.0,
+      "image": "https://peaksaunas.com/cdn/shop/files/rainier_2.png?v=1778549771&width=1732",
+      "offers": [
+        {
+          "source": "Peak Saunas",
+          "price": 7250.0,
+          "url": "https://peaksaunas.com/products/peak-saunas-rainier-1-person-indoor-near-zero-emf-full-spectrum-infrared-sauna-with-xl-medical-grade-red-light-therapy-smart-wifi-app-control",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "peak-saunas-shasta-1-person-indoor-full-spectrum-infrared-sauna",
+      "brand": "Peak Saunas",
+      "model": "Shasta",
+      "title": "Shasta 1-Person Indoor Full Spectrum Infrared Sauna",
+      "category": "Infrared",
+      "placement": "Indoor",
+      "capacity": 1,
+      "msrp": 8495.0,
+      "image": "https://peaksaunas.com/cdn/shop/files/Shasta.png?v=1778549811&width=1748",
+      "offers": [
+        {
+          "source": "Peak Saunas",
+          "price": 6950.0,
+          "url": "https://peaksaunas.com/products/peak-saunas-shasta-1-person-indoor-near-zero-emf-full-spectrum-infrared-sauna-with-xl-medical-grade-red-light-therapy-smart-wifi-app-control",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "redwood-outdoors-barrel-outdoor-sauna-6-person",
+      "brand": "Redwood Outdoors",
+      "model": "Barrel",
+      "title": "Barrel Outdoor Sauna - 6 Person",
+      "category": "Traditional",
+      "placement": "Outdoor",
+      "capacity": 6,
+      "msrp": null,
+      "image": "https://www.redwoodoutdoors.com/cdn/shop/files/RedwoodOutdoors_6_Person_Barrel_Outdoor_Sauna_Front_Angle_View_1.jpg?v=1784160022&width=1920",
+      "offers": [
+        {
+          "source": "Redwood Outdoors",
+          "price": 6299.0,
+          "url": "https://www.redwoodoutdoors.com/products/6-person-barrel-sauna",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "redwood-outdoors-barrel-outdoor-sauna-w-porch-6-person",
+      "brand": "Redwood Outdoors",
+      "model": "Barrel",
+      "title": "Barrel Outdoor Sauna w/ Porch - 6 Person",
+      "category": "Traditional",
+      "placement": "Outdoor",
+      "capacity": 6,
+      "msrp": 6999.0,
+      "image": "https://www.redwoodoutdoors.com/cdn/shop/files/RedwoodOutdoors_6_Person_Barrel_Outdoor_Sauna_With_Porch_Angle_View.jpg?v=1784159597&width=1920",
+      "offers": [
+        {
+          "source": "Redwood Outdoors",
+          "price": 6499.0,
+          "url": "https://www.redwoodoutdoors.com/products/barrel-sauna-porch-6-person",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "redwood-outdoors-barrel-outdoor-sauna-8-person",
+      "brand": "Redwood Outdoors",
+      "model": "Barrel",
+      "title": "Barrel Outdoor Sauna - 8 Person",
+      "category": "Traditional",
+      "placement": "Outdoor",
+      "capacity": 8,
+      "msrp": 6899.0,
+      "image": "https://www.redwoodoutdoors.com/cdn/shop/files/RedwoodOutdoors_8_Person_Barrel_Outdoor_Sauna_Angle_View.jpg?v=1765419200&width=1920",
+      "offers": [
+        {
+          "source": "Redwood Outdoors",
+          "price": 6399.0,
+          "url": "https://www.redwoodoutdoors.com/products/barrel-sauna-8-person",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "redwood-outdoors-cabin-outdoor-sauna-4-person",
+      "brand": "Redwood Outdoors",
+      "model": "Cabin",
+      "title": "Cabin Outdoor Sauna - 4 Person",
+      "category": "Traditional",
+      "placement": "Outdoor",
+      "capacity": 4,
+      "msrp": null,
+      "image": "https://www.redwoodoutdoors.com/cdn/shop/files/RedwoodOutdoors_Cabin_Outdoor_Sauna_Angle_View.png?v=1765501812&width=1920",
+      "offers": [
+        {
+          "source": "Redwood Outdoors",
+          "price": 7299.0,
+          "url": "https://www.redwoodoutdoors.com/products/cabin-outdoor-sauna-4-person",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "redwood-outdoors-duo-outdoor-sauna-2-person",
+      "brand": "Redwood Outdoors",
+      "model": "Duo",
+      "title": "Duo Outdoor Sauna - 2 Person",
+      "category": "Traditional",
+      "placement": "Outdoor",
+      "capacity": 2,
+      "msrp": null,
+      "image": "https://www.redwoodoutdoors.com/cdn/shop/files/RedwoodOutdoors_Duo_002_Outdoor_Sauna_Outside_Front_Angle_View.jpg?v=1769724940&width=1920",
+      "offers": [
+        {
+          "source": "Redwood Outdoors",
+          "price": 5899.0,
+          "url": "https://www.redwoodoutdoors.com/products/duo-outdoor-sauna-2-person",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "redwood-outdoors-extra-wide-outdoor-barrel-sauna-6-person",
+      "brand": "Redwood Outdoors",
+      "model": "Extra-Wide Outdoor Barrel Sauna - 6 Person",
+      "title": "Extra-Wide Outdoor Barrel Sauna - 6 Person",
+      "category": "Traditional",
+      "placement": "Outdoor",
+      "capacity": 6,
+      "msrp": null,
+      "image": "https://www.redwoodoutdoors.com/cdn/shop/files/RedwoodOutdoors_Extra-Wide_Barrel_Outdoor_Sauna_Angle_View.jpg?v=1777938911&width=1920",
+      "offers": [
+        {
+          "source": "Redwood Outdoors",
+          "price": 7499.0,
+          "url": "https://www.redwoodoutdoors.com/products/extra-wide-barrel-sauna-6-person",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "redwood-outdoors-extra-wide-outdoor-barrel-sauna-w-porch-6-person",
+      "brand": "Redwood Outdoors",
+      "model": "Extra-Wide Outdoor Barrel Sauna w/ Porch - 6 Person",
+      "title": "Extra-Wide Outdoor Barrel Sauna w/ Porch - 6 Person",
+      "category": "Traditional",
+      "placement": "Outdoor",
+      "capacity": 6,
+      "msrp": 8499.0,
+      "image": "https://www.redwoodoutdoors.com/cdn/shop/files/RedwoodOutdoors_6_Person_Barrel_Outdoor_Sauna_Extra-Wide_With_Porch_Angle_View.jpg?v=1767904972&width=1920",
+      "offers": [
+        {
+          "source": "Redwood Outdoors",
+          "price": 7999.0,
+          "url": "https://www.redwoodoutdoors.com/products/extra-wide-barrel-sauna-with-porch-6-person",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "redwood-outdoors-garden-outdoor-sauna-8-person",
+      "brand": "Redwood Outdoors",
+      "model": "Garden",
+      "title": "Garden Outdoor Sauna - 8 Person",
+      "category": "Traditional",
+      "placement": "Outdoor",
+      "capacity": 8,
+      "msrp": null,
+      "image": "https://www.redwoodoutdoors.com/cdn/shop/files/RedwoodOutdoors_Garden_Outdoor_Sauna_Angle_View.jpg?v=1772676710&width=1920",
+      "offers": [
+        {
+          "source": "Redwood Outdoors",
+          "price": 8699.0,
+          "url": "https://www.redwoodoutdoors.com/products/garden-outdoor-sauna-8-person",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "redwood-outdoors-grove-outdoor-sauna-8-person",
+      "brand": "Redwood Outdoors",
+      "model": "Grove",
+      "title": "Grove Outdoor Sauna - 8 Person",
+      "category": "Traditional",
+      "placement": "Outdoor",
+      "capacity": 8,
+      "msrp": null,
+      "image": "https://www.redwoodoutdoors.com/cdn/shop/files/RedwoodOutdoors_ADA_Commercial_Outdoor_Sauna_Angle_View.jpg?v=1767914710&width=1920",
+      "offers": [
+        {
+          "source": "Redwood Outdoors",
+          "price": 11699.0,
+          "url": "https://www.redwoodoutdoors.com/products/grove-outdoor-sauna-8-person",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "redwood-outdoors-haven-indoor-sauna-3-person",
+      "brand": "Redwood Outdoors",
+      "model": "Haven",
+      "title": "Haven Indoor Sauna - 3 Person",
+      "category": "Traditional",
+      "placement": "Indoor",
+      "capacity": 3,
+      "msrp": 4999.0,
+      "image": "https://www.redwoodoutdoors.com/cdn/shop/files/RedwoodOutdoors_Haven_Indoor_Sauna_Exterior_Front_Angle_View_02.jpg?v=1778703037&width=1920",
+      "offers": [
+        {
+          "source": "Redwood Outdoors",
+          "price": 4699.0,
+          "url": "https://www.redwoodoutdoors.com/products/haven-indoor-sauna-3-person",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "redwood-outdoors-horizon-outdoor-sauna-6-person-w-porch",
+      "brand": "Redwood Outdoors",
+      "model": "Horizon",
+      "title": "Horizon Outdoor Sauna - 6 Person w/ Porch",
+      "category": "Traditional",
+      "placement": "Outdoor",
+      "capacity": 6,
+      "msrp": null,
+      "image": "https://www.redwoodoutdoors.com/cdn/shop/files/RedwoodOutdoors_Horizon_Outdoor_Sauna_Exterior_Angle_View.jpg?v=1784161140&width=1920",
+      "offers": [
+        {
+          "source": "Redwood Outdoors",
+          "price": 7599.0,
+          "url": "https://www.redwoodoutdoors.com/products/horizon-outdoor-sauna-6-person-porch",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "redwood-outdoors-noctra-outdoor-sauna-8-person",
+      "brand": "Redwood Outdoors",
+      "model": "Noctra",
+      "title": "Noctra Outdoor Sauna - 8 Person",
+      "category": "Traditional",
+      "placement": "Outdoor",
+      "capacity": 8,
+      "msrp": null,
+      "image": "https://www.redwoodoutdoors.com/cdn/shop/files/RedwoodOutdoors_Noctra_Outdoor_Sauna_Exterior_Angled_View_1.jpg?v=1781714786&width=1920",
+      "offers": [
+        {
+          "source": "Redwood Outdoors",
+          "price": 9499.0,
+          "url": "https://www.redwoodoutdoors.com/products/noctra-outdoor-sauna-8-person",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "redwood-outdoors-summit-outdoor-sauna-6-person",
+      "brand": "Redwood Outdoors",
+      "model": "Summit",
+      "title": "Summit Outdoor Sauna - 6 Person",
+      "category": "Traditional",
+      "placement": "Outdoor",
+      "capacity": 6,
+      "msrp": null,
+      "image": "https://www.redwoodoutdoors.com/cdn/shop/files/RedwoodOutdoors_Summit_Outdoor_Sauna_Exterior_Front_Angled_View.jpg?v=1769213091&width=1920",
+      "offers": [
+        {
+          "source": "Redwood Outdoors",
+          "price": 7999.0,
+          "url": "https://www.redwoodoutdoors.com/products/summit-outdoor-sauna-6-person",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "redwood-outdoors-vista-outdoor-sauna-6-person",
+      "brand": "Redwood Outdoors",
+      "model": "Vista",
+      "title": "Vista Outdoor Sauna - 6 Person",
+      "category": "Traditional",
+      "placement": "Outdoor",
+      "capacity": 6,
+      "msrp": null,
+      "image": "https://www.redwoodoutdoors.com/cdn/shop/files/RedwoodOutdoors_Vista_Outdoor_Sauna_Rear_KIP_View.jpg?v=1784160724&width=1920",
+      "offers": [
+        {
+          "source": "Redwood Outdoors",
+          "price": 6899.0,
+          "url": "https://www.redwoodoutdoors.com/products/vista-outdoor-sauna-6-person",
+          "featured": false,
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -1998,7 +3125,7 @@
           "price": 49900.0,
           "url": "https://inhousewellness.com/products/ripavi-sointu-traditional-outdoor",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -2018,7 +3145,7 @@
           "price": 36900.0,
           "url": "https://inhousewellness.com/products/ripavi-tauko-finish-sauna",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -2038,7 +3165,7 @@
           "price": 4940.0,
           "url": "https://inhousewellness.com/products/saunalife-cl3g",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -2051,14 +3178,14 @@
       "placement": "Outdoor",
       "capacity": null,
       "msrp": 8734.0,
-      "image": "https://cdn.shopify.com/s/files/1/0672/9757/4979/files/E8G-1_1.jpg?v=1770883670",
+      "image": "https://cdn.shopify.com/s/files/1/0672/9757/4979/files/saunalife-e8g-deck.jpg?v=1786371229",
       "offers": [
         {
           "source": "InHouse Wellness",
           "price": 7940.0,
           "url": "https://inhousewellness.com/products/saunalife-e8g",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -2078,7 +3205,7 @@
           "price": 6940.0,
           "url": "https://inhousewellness.com/products/saunalife-ee6g",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -2091,14 +3218,14 @@
       "placement": "Outdoor",
       "capacity": 6,
       "msrp": 8954.0,
-      "image": "https://cdn.shopify.com/s/files/1/0672/9757/4979/files/EE8G-1-500x500.jpg?v=1770883653",
+      "image": "https://cdn.shopify.com/s/files/1/0672/9757/4979/files/EE8G-7-500x500.jpg?v=1770883654",
       "offers": [
         {
           "source": "InHouse Wellness",
           "price": 8140.0,
           "url": "https://inhousewellness.com/products/saunalife-ee8g",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -2118,7 +3245,7 @@
           "price": 16980.0,
           "url": "https://inhousewellness.com/products/saunalife-g11",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -2138,7 +3265,7 @@
           "price": 7940.0,
           "url": "https://inhousewellness.com/products/saunalife-g3",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -2158,7 +3285,7 @@
           "price": 26890.0,
           "url": "https://inhousewellness.com/products/saunalife-g6",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -2178,27 +3305,7 @@
           "price": 9450.0,
           "url": "https://inhousewellness.com/products/scandia-electric-barrel-sauna-kit-6x4x6",
           "featured": true,
-          "observed": "2026-08-10"
-        }
-      ]
-    },
-    {
-      "model_key": "scandia-electric-barrel-sauna-kit-4-person-traditional-sauna-for-home",
-      "brand": "Scandia",
-      "model": "BS65-T",
-      "title": "Scandia Electric Barrel Sauna Kit – 4-Person Traditional Sauna for Home",
-      "category": "Traditional",
-      "placement": "Outdoor",
-      "capacity": 4,
-      "msrp": 14040.0,
-      "image": "https://cdn.shopify.com/s/files/1/0672/9757/4979/files/scandia-electric-barrel-sauna-kit-traditional-sauna-for-home-wellness-relaxation-378945.webp?v=1770880553",
-      "offers": [
-        {
-          "source": "InHouse Wellness",
-          "price": 10800.0,
-          "url": "https://inhousewellness.com/products/scandia-electric-barrel-sauna-kit",
-          "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -2218,7 +3325,14 @@
           "price": 12100.0,
           "url": "https://inhousewellness.com/products/scandia-electric-barrel-sauna-kit-4-person",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
+        },
+        {
+          "source": "InHouse Wellness",
+          "price": 10800.0,
+          "url": "https://inhousewellness.com/products/scandia-electric-barrel-sauna-kit",
+          "featured": true,
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -2238,7 +3352,7 @@
           "price": 12900.0,
           "url": "https://inhousewellness.com/products/scandia-4-person-barrel-sauna-kit",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -2258,7 +3372,7 @@
           "price": 13500.0,
           "url": "https://inhousewellness.com/products/scandia-barrel-sauna-4-person",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -2278,7 +3392,7 @@
           "price": 9500.0,
           "url": "https://inhousewellness.com/products/pre-cut-hand-finished-sauna-kit-1-3-person",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -2298,7 +3412,7 @@
           "price": 10080.0,
           "url": "https://inhousewellness.com/products/hand-finished-precut-sauna-kit",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
         }
       ]
     },
@@ -2318,7 +3432,147 @@
           "price": 13800.0,
           "url": "https://inhousewellness.com/products/hand-finished-sauna-kit-8-plus-people",
           "featured": true,
-          "observed": "2026-08-10"
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "sun-home-equinox-2-person-indoor-full-spectrum-infrared-sauna",
+      "brand": "Sun Home",
+      "model": "Equinox 2",
+      "title": "Equinox 2-Person Indoor Full Spectrum Infrared Sauna",
+      "category": "Infrared",
+      "placement": "Indoor",
+      "capacity": 2,
+      "msrp": 6799.0,
+      "image": "https://sunhomesaunas.com/cdn/shop/files/Amplify2_Eucalyptus_Front_2_1024x1024_b07f7fdb-f662-4ee1-a1fb-d0e0ddbcb612_1024x.png?v=1773276875",
+      "offers": [
+        {
+          "source": "Sun Home",
+          "price": 6099.0,
+          "url": "https://sunhomesaunas.com/products/sun-home-equinox-2-person-full-spectrum-infrared-sauna",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "sun-home-equinox-3-person-indoor-full-spectrum-infrared-sauna",
+      "brand": "Sun Home",
+      "model": "Equinox 3",
+      "title": "Equinox 3-Person Indoor Full Spectrum Infrared Sauna",
+      "category": "Infrared",
+      "placement": "Indoor",
+      "capacity": 3,
+      "msrp": 7699.0,
+      "image": "https://sunhomesaunas.com/cdn/shop/files/Amplify3_Eucalyptus_Front_1_1024x1024_7e5a7095-947d-4a24-afd9-ec08b76228da_1024x.png?v=1773276898",
+      "offers": [
+        {
+          "source": "Sun Home",
+          "price": 6999.0,
+          "url": "https://sunhomesaunas.com/products/sun-home-equinox-3-person-full-spectrum-bestinfrared-sauna",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "sun-home-luminar-2-person-outdoor-full-spectrum-infrared-sauna",
+      "brand": "Sun Home",
+      "model": "Luminar 2",
+      "title": "Luminar 2-Person Outdoor Full Spectrum Infrared Sauna",
+      "category": "Infrared",
+      "placement": "Outdoor",
+      "capacity": 2,
+      "msrp": 11599.0,
+      "image": "https://sunhomesaunas.com/cdn/shop/files/fix_luminar_2_revised_2048x.png?v=1780542308",
+      "offers": [
+        {
+          "source": "Sun Home",
+          "price": 10999.0,
+          "url": "https://sunhomesaunas.com/products/2-person-outdoor-infrared-sauna",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "sun-home-solstice-1-person-indoor-infrared-sauna",
+      "brand": "Sun Home",
+      "model": "Solstice 1",
+      "title": "Solstice 1-Person Indoor Infrared Sauna",
+      "category": "Infrared",
+      "placement": "Indoor",
+      "capacity": 1,
+      "msrp": 5599.0,
+      "image": "https://sunhomesaunas.com/cdn/shop/files/Sun_Home_Solstice_personal_home_sauna_1024x1024_659b77ca-8530-4609-9302-4f2979fd084d_1024x.png?v=1773276909",
+      "offers": [
+        {
+          "source": "Sun Home",
+          "price": 4999.0,
+          "url": "https://sunhomesaunas.com/products/sun-home-solstice-1-person-infrared-sauna",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "sun-home-solstice-2-person-indoor-infrared-sauna",
+      "brand": "Sun Home",
+      "model": "Solstice 2",
+      "title": "Solstice 2-Person Indoor Infrared Sauna",
+      "category": "Infrared",
+      "placement": "Indoor",
+      "capacity": 2,
+      "msrp": 6199.0,
+      "image": "https://sunhomesaunas.com/cdn/shop/files/Signature2_Eucalyptus_Front_1024x1024_9755e130-0421-41b8-bdbc-98c10cac812a_1024x.png?v=1773276914",
+      "offers": [
+        {
+          "source": "Sun Home",
+          "price": 5599.0,
+          "url": "https://sunhomesaunas.com/products/best-2-person-infrared-sauna",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "sun-home-solstice-3-person-indoor-infrared-sauna",
+      "brand": "Sun Home",
+      "model": "Solstice 3",
+      "title": "Solstice 3-Person Indoor Infrared Sauna",
+      "category": "Infrared",
+      "placement": "Indoor",
+      "capacity": 3,
+      "msrp": 6999.0,
+      "image": "https://sunhomesaunas.com/cdn/shop/files/Signature3_Eucalyptus_Front_1_1024x1024_207cd456-778a-491e-b7d0-a9ea06455c9e_1024x.png?v=1773276920",
+      "offers": [
+        {
+          "source": "Sun Home",
+          "price": 6299.0,
+          "url": "https://sunhomesaunas.com/products/fullspectruminfraredsauna",
+          "featured": false,
+          "observed": "2026-08-14"
+        }
+      ]
+    },
+    {
+      "model_key": "sun-home-solstice-4-person-indoor-infrared-sauna",
+      "brand": "Sun Home",
+      "model": "Solstice 4",
+      "title": "Solstice 4-Person Indoor Infrared Sauna",
+      "category": "Infrared",
+      "placement": "Indoor",
+      "capacity": 4,
+      "msrp": 8599.0,
+      "image": "https://sunhomesaunas.com/cdn/shop/files/Signature4_Eucalyptus_Qtr_L_1_1024x1024_c9ee7871-69fe-49cd-bb26-2ed9bc3973a5_1024x.png?v=1773276933",
+      "offers": [
+        {
+          "source": "Sun Home",
+          "price": 7799.0,
+          "url": "https://sunhomesaunas.com/products/sun-home-solstice-4-person-infrared-sauna",
+          "featured": false,
+          "observed": "2026-08-14"
         }
       ]
     }

@@ -370,16 +370,46 @@ def primary_offer(p):
     if not offers:return {}
     return next((o for o in offers if o.get('featured')),None) or min(offers,key=lambda o:fnum(o.get('price')))
 
+def model_summary(p):
+    """Build a concise, model-specific buying summary from verified catalog fields."""
+    brand=str(p.get('brand') or 'This')
+    model=str(p.get('model') or p.get('model_key') or 'sauna')
+    name=f'{brand} {model}'.strip()
+    category=str(p.get('category') or 'home').lower()
+    placement=str(p.get('placement') or 'home').lower()
+    capacity=p.get('capacity')
+    capacity_text=''
+    if capacity:
+        capacity_text=f' with room for up to {capacity} {"person" if str(capacity)=="1" else "people"}'
+    sentences=[
+        f'The {name} is a {category} sauna designed for {placement} use{capacity_text}.',
+        f'The catalog identifies this model as “{p.get("title") or name},” so use SKU {model} when comparing seller listings, included equipment and current pricing.',
+    ]
+    if category=='infrared':
+        sentences.append('When comparing this infrared sauna, confirm the heater spectrum, published EMF test conditions, maximum operating temperature, controls and electrical requirements.')
+    elif category=='traditional':
+        sentences.append('For this traditional sauna, compare heater output, room volume, ventilation, controls and the required electrical connection or chimney setup.')
+    elif category=='hybrid':
+        sentences.append('For this hybrid sauna, verify the included heating systems, whether they can run together, the controller setup and electrical circuit requirements.')
+    else:
+        sentences.append('Before purchasing, verify the heating system, controls, power requirements and included equipment for this exact SKU.')
+    if placement=='outdoor':
+        sentences.append('Outdoor installation also calls for checking the foundation, weather protection or roof package, delivery access and local code requirements.')
+    else:
+        sentences.append('For indoor installation, measure the room and delivery path, then confirm floor protection, ventilation, clearances and the required circuit.')
+    return ' '.join(sentences)
+
 def page_html(p):
     offers=display_offers(p)
     primary=primary_offer(p); prices=[fnum(o.get('price')) for o in offers if fnum(o.get('price'))>0]
     lowest=min(prices) if prices else 0; highest=max(prices) if prices else 0; e=html.escape
     model_anchor=f'#model-{p.get("model_key","")}'
+    sku=str(p.get('model') or p.get('model_key') or 'Model')
     offer_html=''.join(
         f'<div class="offer {"featured" if o.get("featured") else ""}"><div><strong>{e(str(o.get("source","")))}</strong>'
-        f'{"<span class=\"feature-label\">Featured retailer</span>" if o.get("featured") else ""}'
+        f'{"<span class=\"feature-label\">Best Retailer</span>" if o.get("featured") else ""}'
         f'<div class="tiny">Observed {e(str(o.get("observed","recently")))}</div></div>'
-        f'<div><strong>${fnum(o.get("price")):,.0f}</strong> · <a href="{supplier_path(o.get("source"))}{model_anchor}">Buy Here</a></div></div>'
+        f'<div><strong>${fnum(o.get("price")):,.0f}</strong> · <a href="{supplier_path(o.get("source"))}{model_anchor}">{e(sku)}</a></div></div>'
         for o in offers
     )
     seller=primary.get('source','Observed supplier'); seller_label='Featured retailer' if primary.get('featured') else 'Observed supplier'
@@ -389,7 +419,9 @@ def page_html(p):
     ref=f'<p><strong>Reference price:</strong> ${fnum(p.get("msrp")):,.0f}</p>' if fnum(p.get('msrp')) else ''
     cap=f'{p.get("capacity")} person' if p.get('capacity') else 'Not verified'
     buy_path=f'{supplier_path(primary.get("source"))}{model_anchor}'
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(str(p.get('brand','')))} {e(str(p.get('model','')))} Price | Saunas Factory Direct</title><meta name="description" content="{e(desc,quote=True)}"><link rel="canonical" href="https://saunasfactorydirect.com/models/{e(str(p.get('model_key','')),quote=True)}/"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/style.css"><script type="application/ld+json">{json.dumps(schema)}</script></head><body>{site_header()}<main><section class="page-hero"><div class="wrap"><span class="eyebrow">Price comparison</span><h1>{e(str(p.get('brand','')))} {e(str(p.get('model','')))}</h1><p>{e(str(p.get('title','')))}</p><div class="model-wrap"><article class="model-card"><span class="badge">{e(str(p.get('category','')))} · {e(str(p.get('placement','')))}</span><h2>Current observed pricing</h2><div class="price-line"><span class="price">${fnum(primary.get('price')):,.0f}</span>{msrp}</div><p>{seller_label}: <strong>{e(str(seller))}</strong>. Lowest displayed offer: <strong>${lowest:,.0f}</strong>.</p><div class="offer-list">{offer_html}</div></article><aside class="model-card"><h2>Model snapshot</h2><p><strong>Brand:</strong> {e(str(p.get('brand','')))}</p><p><strong>Model:</strong> {e(str(p.get('model','')))}</p><p><strong>Type:</strong> {e(str(p.get('category','')))}</p><p><strong>Placement:</strong> {e(str(p.get('placement','')))}</p><p><strong>Capacity:</strong> {e(str(cap))}</p>{ref}<a class="btn btn-primary" href="{buy_path}">Buy Here</a><p class="tiny">The button opens our supplier profile first. Verify configuration, shipping, electrical requirements, warranty and dealer authorization before purchase.</p></aside></div></div></section></main>{site_footer()}</body></html>'''
+    buy_label=f'Buy {p.get("brand") or "this sauna"}'
+    about_heading=f'About the {p.get("brand") or "sauna"} {sku}'
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(str(p.get('brand','')))} {e(str(p.get('model','')))} Price | Saunas Factory Direct</title><meta name="description" content="{e(desc,quote=True)}"><link rel="canonical" href="https://saunasfactorydirect.com/models/{e(str(p.get('model_key','')),quote=True)}/"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/style.css"><script type="application/ld+json">{json.dumps(schema)}</script></head><body>{site_header()}<main><section class="page-hero"><div class="wrap"><span class="eyebrow">Price comparison</span><h1>{e(str(p.get('brand','')))} {e(str(p.get('model','')))}</h1><p>{e(str(p.get('title','')))}</p><div class="model-wrap"><article class="model-card"><span class="badge">{e(str(p.get('category','')))} · {e(str(p.get('placement','')))}</span><h2>Current observed pricing</h2><div class="price-line"><span class="price">${fnum(primary.get('price')):,.0f}</span>{msrp}</div><p>{seller_label}: <strong>{e(str(seller))}</strong>. Lowest displayed offer: <strong>${lowest:,.0f}</strong>.</p><div class="offer-list">{offer_html}</div><div class="model-brief"><h2>{e(about_heading)}</h2><p>{e(model_summary(p))}</p></div></article><aside class="model-card"><h2>Model snapshot</h2><p><strong>Brand:</strong> {e(str(p.get('brand','')))}</p><p><strong>Model:</strong> {e(str(p.get('model','')))}</p><p><strong>Type:</strong> {e(str(p.get('category','')))}</p><p><strong>Placement:</strong> {e(str(p.get('placement','')))}</p><p><strong>Capacity:</strong> {e(str(cap))}</p>{ref}<a class="btn btn-primary" href="{buy_path}">{e(buy_label)}</a><p class="tiny">The button opens our supplier profile first. Verify configuration, shipping, electrical requirements, warranty and dealer authorization before purchase.</p></aside></div></div></section></main>{site_footer()}</body></html>'''
 
 def supplier_groups(products):
     groups={}

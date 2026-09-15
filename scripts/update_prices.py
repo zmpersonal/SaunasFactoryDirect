@@ -2,7 +2,7 @@
 import csv, json, re, sys, time, html
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlsplit
 
 ROOT=Path(__file__).resolve().parents[1]
 DATA=ROOT/'data'/'products.json'
@@ -10,6 +10,38 @@ EXTERNAL=ROOT/'data'/'external_sources.csv'
 EXTERNAL_PRODUCTS=ROOT/'data'/'external_products.csv'
 BASE='https://inhousewellness.com'
 UA='SaunasFactoryDirectPriceBot/1.1 (+https://saunasfactorydirect.com/methodology/)'
+
+STATIC_URLS=[
+    'https://saunasfactorydirect.com/',
+    'https://saunasfactorydirect.com/about/',
+    'https://saunasfactorydirect.com/editorial-policy/',
+    'https://saunasfactorydirect.com/disclosure/',
+    'https://saunasfactorydirect.com/disclaimer/',
+    'https://saunasfactorydirect.com/privacy/',
+    'https://saunasfactorydirect.com/terms/',
+    'https://saunasfactorydirect.com/methodology/',
+    'https://saunasfactorydirect.com/suppliers/',
+]
+
+SUPPLIER_LANDING={
+    'InHouse Wellness':'https://inhousewellness.com/collections/saunas',
+    'Plunge':'https://plunge.com/pages/product-lineup-hot',
+    'Heavenly Heat Saunas':'https://heavenlyheatsaunas.com/',
+}
+
+SUPPLIER_SUMMARIES={
+    'Almost Heaven':'Manufacturer-direct listings for traditional barrel, canopy and cabin saunas.',
+    'Golden Design Saunas':'Retail listings for selected Golden Designs and Dynamic sauna models.',
+    'Golden Designs Inc':'Manufacturer listings for selected Golden Designs and Dynamic sauna models.',
+    'Green Vista Living':'Retail listings for selected home sauna models in the price index.',
+    'Health Mate':'Manufacturer-direct listings for indoor infrared sauna cabins.',
+    'Heavenly Heat Saunas':'Manufacturer-direct listings for infrared, red-light, traditional and combination sauna cabins.',
+    'Northern Saunas':'Retail listings for premium indoor and outdoor sauna cabins from several manufacturers.',
+    'Peak Saunas':'Manufacturer-direct listings for indoor and outdoor full-spectrum infrared saunas.',
+    'Plunge':'Manufacturer-direct listings for traditional and infrared home saunas.',
+    'Redwood Outdoors':'Manufacturer-direct listings for indoor, outdoor, barrel and cabin saunas.',
+    'Sun Home':'Manufacturer-direct listings for indoor and outdoor infrared sauna cabins.',
+}
 
 try:
     import requests
@@ -21,6 +53,43 @@ def slug(s):
     s=(s or '').lower().replace('‑','-').replace('–','-').replace('—','-')
     s=re.sub(r'[^a-z0-9]+','-',s).strip('-')
     return s[:90] or 'sauna'
+
+def supplier_key(source):
+    return slug(source or 'supplier')
+
+def display_offers(p):
+    """Return only offers that may be presented as places to buy.
+
+    InHouse Wellness is the exclusive displayed seller whenever it carries an
+    exact model. Other observed offers may remain in the source data for the
+    updater, but they are not rendered as alternate purchase paths.
+    """
+    offers=[o for o in p.get('offers',[]) if fnum(o.get('price'))>0]
+    inhouse=next((o for o in offers if o.get('source')=='InHouse Wellness'),None)
+    if inhouse:return [inhouse]
+    by_source={}
+    for offer in offers:
+        source=offer.get('source') or 'Supplier'
+        if source not in by_source or fnum(offer.get('price'))<fnum(by_source[source].get('price')):
+            by_source[source]=offer
+    return sorted(by_source.values(),key=lambda o:fnum(o.get('price')) or 10**12)
+
+def supplier_path(source):
+    return f'/suppliers/{supplier_key(source)}/'
+
+def supplier_landing(source,offers):
+    if source in SUPPLIER_LANDING:return SUPPLIER_LANDING[source]
+    for offer in offers:
+        parts=urlsplit(str(offer.get('url') or ''))
+        if parts.scheme in ('http','https') and parts.netloc:
+            return f'{parts.scheme}://{parts.netloc}/'
+    return '#'
+
+def site_header():
+    return '''<header class="site-header"><div class="wrap nav"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true">$</span><span>Saunas Factory Direct</span></a><nav class="nav-links" aria-label="Primary navigation"><a href="/#price-index">Price index</a><a href="/#deal-checker">Deal checker</a><a href="/suppliers/">Suppliers</a><a href="/methodology/">Methodology</a></nav></div></header>'''
+
+def site_footer():
+    return '''<footer><div class="wrap footer-grid"><div class="footer-intro"><a class="brand footer-brand" href="/"><span class="brand-mark" aria-hidden="true">$</span><span>Saunas Factory Direct</span></a><p class="tiny">A home sauna pricing reference. Prices and availability change; verify final specifications, delivery costs and seller terms before purchasing.</p></div><div class="footer-links"><div><strong>Research</strong><a href="/#price-index">Price index</a><a href="/#deal-checker">Deal checker</a><a href="/suppliers/">Supplier directory</a><a href="/methodology/">Methodology</a></div><div><strong>About</strong><a href="/about/">About us</a><a href="/editorial-policy/">Editorial policy</a><a href="/disclosure/">Retailer disclosure</a></div><div><strong>Legal</strong><a href="/disclaimer/">Disclaimer</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div></div></div><div class="wrap footer-bottom"><span>© 2026 Saunas Factory Direct</span><span>Prices are informational, not guaranteed quotes.</span></div></footer>'''
 
 def model_key(title='', sku=''):
     sku=(sku or '').strip()
@@ -297,29 +366,99 @@ def write_csv(products):
             for o in p.get('offers',[]):w.writerow([p.get('model_key'),p.get('brand'),p.get('model'),p.get('title'),p.get('category'),p.get('placement'),p.get('capacity'),p.get('msrp'),o.get('source'),o.get('price'),o.get('url'),o.get('featured'),o.get('observed')])
 
 def primary_offer(p):
-    offers=[o for o in p.get('offers',[]) if fnum(o.get('price'))>0]
+    offers=display_offers(p)
     if not offers:return {}
     return next((o for o in offers if o.get('featured')),None) or min(offers,key=lambda o:fnum(o.get('price')))
 
 def page_html(p):
-    offers=sorted(p.get('offers',[]),key=lambda o:(not o.get('featured',False),fnum(o.get('price')) or 10**12))
+    offers=display_offers(p)
     primary=primary_offer(p); prices=[fnum(o.get('price')) for o in offers if fnum(o.get('price'))>0]
     lowest=min(prices) if prices else 0; highest=max(prices) if prices else 0; e=html.escape
+    model_anchor=f'#model-{p.get("model_key","")}'
     offer_html=''.join(
         f'<div class="offer {"featured" if o.get("featured") else ""}"><div><strong>{e(str(o.get("source","")))}</strong>'
-        f'{"<span class=\"feature-label\">Featured first</span>" if o.get("featured") else ""}'
+        f'{"<span class=\"feature-label\">Featured retailer</span>" if o.get("featured") else ""}'
         f'<div class="tiny">Observed {e(str(o.get("observed","recently")))}</div></div>'
-        f'<div><strong>${fnum(o.get("price")):,.0f}</strong> · <a href="{e(str(o.get("url","")),quote=True)}" target="_blank" rel="sponsored noopener">visit</a></div></div>'
+        f'<div><strong>${fnum(o.get("price")):,.0f}</strong> · <a href="{supplier_path(o.get("source"))}{model_anchor}">Buy Here</a></div></div>'
         for o in offers
     )
-    seller=primary.get('source','Observed seller'); seller_label='Featured seller' if primary.get('featured') else 'Observed seller'
-    button='View InHouse offer' if primary.get('featured') else f'View {seller}'
+    seller=primary.get('source','Observed supplier'); seller_label='Featured retailer' if primary.get('featured') else 'Observed supplier'
     desc=f'Current price comparison for {p.get("brand")} {p.get("model")}. Compare observed seller prices, reference price and deal context.'
     schema={'@context':'https://schema.org','@type':'Product','name':p.get('title'),'brand':{'@type':'Brand','name':p.get('brand')},'model':p.get('model'),'offers':{'@type':'AggregateOffer','priceCurrency':'USD','lowPrice':lowest,'highPrice':highest,'offerCount':len(offers)}}
     msrp=f'<s>${fnum(p.get("msrp")):,.0f}</s>' if fnum(p.get('msrp')) else ''
     ref=f'<p><strong>Reference price:</strong> ${fnum(p.get("msrp")):,.0f}</p>' if fnum(p.get('msrp')) else ''
     cap=f'{p.get("capacity")} person' if p.get('capacity') else 'Not verified'
-    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(str(p.get('brand','')))} {e(str(p.get('model','')))} Price | Saunas Factory Direct</title><meta name="description" content="{e(desc,quote=True)}"><link rel="canonical" href="https://saunasfactorydirect.com/models/{e(str(p.get('model_key','')),quote=True)}/"><link rel="stylesheet" href="/assets/style.css"><script type="application/ld+json">{json.dumps(schema)}</script></head><body><header class="site-header"><div class="wrap nav"><a class="brand" href="/"><span class="brand-mark">$</span><span>Saunas Factory Direct</span></a><nav class="nav-links"><a href="/#price-index">Price index</a><a href="/#deal-checker">Deal checker</a><a href="/methodology/">Methodology</a></nav></div></header><main><section class="page-hero"><div class="wrap"><span class="eyebrow">Price comparison</span><h1>{e(str(p.get('brand','')))} {e(str(p.get('model','')))}</h1><p>{e(str(p.get('title','')))}</p><div class="model-wrap"><article class="model-card"><span class="badge">{e(str(p.get('category','')))} · {e(str(p.get('placement','')))}</span><h2>Current observed pricing</h2><div class="price-line"><span class="price">${fnum(primary.get('price')):,.0f}</span>{msrp}</div><p>{seller_label}: <strong>{e(str(seller))}</strong>. Lowest observed across active sources: <strong>${lowest:,.0f}</strong>.</p><div class="offer-list">{offer_html}</div></article><aside class="model-card"><h2>Model snapshot</h2><p><strong>Brand:</strong> {e(str(p.get('brand','')))}</p><p><strong>Model:</strong> {e(str(p.get('model','')))}</p><p><strong>Type:</strong> {e(str(p.get('category','')))}</p><p><strong>Placement:</strong> {e(str(p.get('placement','')))}</p><p><strong>Capacity:</strong> {e(str(cap))}</p>{ref}<a class="btn btn-primary" href="{e(str(primary.get('url','#')),quote=True)}" target="_blank" rel="sponsored noopener">{e(button)}</a><p class="tiny">Verify configuration, shipping, electrical requirements, warranty and dealer authorization before purchase.</p></aside></div></div></section></main><footer><div class="wrap"><a href="/">← Back to price index</a></div></footer></body></html>'''
+    buy_path=f'{supplier_path(primary.get("source"))}{model_anchor}'
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(str(p.get('brand','')))} {e(str(p.get('model','')))} Price | Saunas Factory Direct</title><meta name="description" content="{e(desc,quote=True)}"><link rel="canonical" href="https://saunasfactorydirect.com/models/{e(str(p.get('model_key','')),quote=True)}/"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/style.css"><script type="application/ld+json">{json.dumps(schema)}</script></head><body>{site_header()}<main><section class="page-hero"><div class="wrap"><span class="eyebrow">Price comparison</span><h1>{e(str(p.get('brand','')))} {e(str(p.get('model','')))}</h1><p>{e(str(p.get('title','')))}</p><div class="model-wrap"><article class="model-card"><span class="badge">{e(str(p.get('category','')))} · {e(str(p.get('placement','')))}</span><h2>Current observed pricing</h2><div class="price-line"><span class="price">${fnum(primary.get('price')):,.0f}</span>{msrp}</div><p>{seller_label}: <strong>{e(str(seller))}</strong>. Lowest displayed offer: <strong>${lowest:,.0f}</strong>.</p><div class="offer-list">{offer_html}</div></article><aside class="model-card"><h2>Model snapshot</h2><p><strong>Brand:</strong> {e(str(p.get('brand','')))}</p><p><strong>Model:</strong> {e(str(p.get('model','')))}</p><p><strong>Type:</strong> {e(str(p.get('category','')))}</p><p><strong>Placement:</strong> {e(str(p.get('placement','')))}</p><p><strong>Capacity:</strong> {e(str(cap))}</p>{ref}<a class="btn btn-primary" href="{buy_path}">Buy Here</a><p class="tiny">The button opens our supplier profile first. Verify configuration, shipping, electrical requirements, warranty and dealer authorization before purchase.</p></aside></div></div></section></main>{site_footer()}</body></html>'''
+
+def supplier_groups(products):
+    groups={}
+    for p in products:
+        for offer in display_offers(p):
+            source=offer.get('source') or 'Supplier'
+            groups.setdefault(source,[]).append((p,offer))
+    return groups
+
+def supplier_model_rows(items):
+    e=html.escape
+    rows=[]
+    for p,offer in sorted(items,key=lambda item:(item[0].get('brand',''),item[0].get('model',''))):
+        cap=f'{p.get("capacity")} person' if p.get('capacity') else 'Size not verified'
+        rows.append(f'''<tr id="model-{e(str(p.get('model_key','')),quote=True)}"><td class="product-cell"><strong><a href="/models/{e(str(p.get('model_key','')),quote=True)}/">{e(str(p.get('title','')))}</a></strong><span>{e(str(p.get('brand','')))} · {e(str(p.get('model','')))}</span></td><td>{e(str(p.get('category','')))}</td><td>{e(str(p.get('placement','')))} · {e(cap)}</td><td class="price-main">${fnum(offer.get('price')):,.0f}</td><td><a class="text-link" href="/models/{e(str(p.get('model_key','')),quote=True)}/">Price details →</a></td></tr>''')
+    return ''.join(rows)
+
+def inhouse_supplier_page(items,landing):
+    e=html.escape
+    products=[p for p,_ in items]
+    offers=[o for _,o in items]
+    brands=sorted({p.get('brand') for p in products if p.get('brand')})
+    categories=sorted({p.get('category') for p in products if p.get('category')})
+    placements=sorted({p.get('placement') for p in products if p.get('placement')})
+    prices=[fnum(o.get('price')) for o in offers if fnum(o.get('price'))]
+    brand_text=', '.join(brands)
+    stats=f'''<div class="profile-stats"><div><strong>{len(products)}</strong><span>models tracked</span></div><div><strong>{len(brands)}</strong><span>brands in index</span></div><div><strong>${min(prices):,.0f}–${max(prices):,.0f}</strong><span>observed range</span></div><div><strong>{' / '.join(placements)}</strong><span>placements</span></div></div>'''
+    schema={'@context':'https://schema.org','@type':'Organization','name':'InHouse Wellness','description':'Featured home sauna retailer profile on Saunas Factory Direct.'}
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>InHouse Wellness Sauna Retailer Review, Brands & Prices</title><meta name="description" content="Review InHouse Wellness sauna brands, current tracked prices, delivery considerations and buying guidance for infrared, traditional, hybrid, indoor and outdoor saunas."><link rel="canonical" href="https://saunasfactorydirect.com/suppliers/inhouse-wellness/"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/style.css"><script type="application/ld+json">{json.dumps(schema)}</script></head><body>{site_header()}<main><section class="supplier-hero supplier-hero-featured"><div class="wrap supplier-hero-grid"><div><span class="eyebrow">Featured sauna retailer</span><h1>InHouse Wellness sauna brands, prices and buying guide</h1><p class="lede">InHouse Wellness is an Austin, Texas home-wellness retailer with a broad catalog of infrared saunas, traditional saunas, hybrid saunas, barrel saunas and outdoor sauna kits. This profile brings its tracked models, current advertised prices and practical purchase considerations together in one place.</p><div class="hero-actions"><a class="btn btn-primary" href="{e(landing,quote=True)}" target="_blank" rel="sponsored noopener">Shop home saunas at InHouse Wellness</a><a class="btn btn-secondary" href="#models">See {len(products)} tracked models</a></div><p class="link-note">External retailer link · Prices and terms should be verified on the retailer’s site.</p></div><aside class="supplier-summary"><span class="feature-label">Most complete supplier profile</span><h2>Catalog snapshot</h2><p><strong>Sauna types:</strong> {e(', '.join(categories))}</p><p><strong>Installation:</strong> {e(', '.join(placements))}</p><p><strong>Brands currently represented:</strong> {e(brand_text)}</p></aside></div></section><section class="section"><div class="wrap">{stats}<div class="content-grid"><article class="prose"><h2>A broad home sauna retailer</h2><p>InHouse Wellness covers more of the home sauna market than a single-brand store. The tracked selection ranges from compact one- and two-person infrared sauna cabins to multi-person traditional and hybrid rooms, outdoor sauna cabins, barrel saunas and heater packages. That range makes the retailer useful when a buyer is still comparing heat type, room size, placement and electrical requirements rather than choosing between two versions of the same cabin.</p><p>Brands associated with its sauna catalog include Finnmark Designs, Golden Designs, Dynamic Saunas, Maxxus, Dundalk LeisureCraft, SaunaLife, Scandia and Ripavi. The live Saunas Factory Direct dataset may show a slightly different list because models are included only when a usable current price and model identity can be recorded.</p><h2>Why InHouse Wellness is featured</h2><p>InHouse Wellness receives featured placement on Saunas Factory Direct. It is also the only displayed place to buy when the same exact model appears at multiple tracked sellers. That commercial presentation rule is separate from the mechanics used to record prices and reference values, and it is disclosed throughout this site.</p><p>The retailer advertises free curbside shipping in the continental United States, a price-match review, pre-purchase guidance and optional upgraded delivery or assembly services on eligible orders. Large saunas have site-access, unloading and electrical requirements that vary by model, so buyers should confirm the complete delivered and installed cost instead of comparing cabinet price alone.</p><h2>How to choose from the InHouse sauna catalog</h2><h3>Infrared saunas</h3><p>Infrared sauna buyers should compare heater spectrum, published EMF measurements, cabin material, maximum operating temperature, electrical circuit and warranty terms. Product labels such as low EMF, ultra-low EMF, near-zero EMF, far infrared and full spectrum are not interchangeable; compare the manufacturer’s measurement distance and test conditions before treating two claims as equivalent.</p><h3>Traditional and hybrid saunas</h3><p>Traditional electric or wood-fired saunas operate differently from infrared cabins and usually require more planning. Check heater output, room volume, ventilation, clearances and the electrical circuit or chimney requirements. A hybrid sauna combines more than one heating mode, but the buyer still needs to verify whether those modes can run together and which circuits are required.</p><h3>Indoor, outdoor and barrel saunas</h3><p>Indoor sauna shopping starts with finished room dimensions, door clearance, floor protection and power. Outdoor sauna shopping adds foundation, weather exposure, roof treatment and local permitting questions. Barrel and pod shapes can heat efficiently, while rectangular cabins may provide more flexible bench heights and interior layouts. The best choice depends on climate, intended bathers and whether the structure will be assembled by the owner or a professional.</p><h2>Price, delivery and installation checklist</h2><ul><li>Match the exact model or SKU, not only the marketing name.</li><li>Confirm whether the advertised price includes the heater, controls, stones, roof kit or accessories shown in photography.</li><li>Ask whether delivery is curbside, threshold, room-of-choice or full assembly.</li><li>Measure the crate path as well as the final sauna location.</li><li>Have a licensed electrician verify voltage, amperage and hardwiring requirements.</li><li>Read the manufacturer warranty, retailer return window, cancellation terms and any re-boxing or restocking fees.</li><li>Confirm current lead time and inventory before scheduling contractors.</li></ul><div class="disclosure"><strong>Retailer disclosure:</strong> InHouse Wellness is intentionally featured. Saunas Factory Direct is a pricing reference and does not process the retailer’s orders, returns, warranties or installations.</div></article><aside class="toc-card"><strong>On this page</strong><a href="#models">Tracked InHouse models</a><a href="/methodology/">Price methodology</a><a href="/disclosure/">Retailer disclosure</a><a href="/disclaimer/">Buyer disclaimer</a></aside></div></div></section><section class="section section-white" id="models"><div class="wrap"><div class="section-title"><div><span class="eyebrow">Current catalog data</span><h2>InHouse Wellness sauna models</h2></div><p>{len(products)} models currently have a usable InHouse Wellness offer in the index. Follow any model for its specification and price context.</p></div><div class="table-shell"><table class="supplier-table"><thead><tr><th>Sauna model</th><th>Type</th><th>Placement & size</th><th>Observed price</th><th>Research</th></tr></thead><tbody>{supplier_model_rows(items)}</tbody></table></div></div></section></main>{site_footer()}</body></html>'''
+
+def standard_supplier_page(source,items,landing):
+    e=html.escape
+    products=[p for p,_ in items]
+    brands=sorted({p.get('brand') for p in products if p.get('brand')})
+    categories=sorted({p.get('category') for p in products if p.get('category')})
+    summary=SUPPLIER_SUMMARIES.get(source,'Retailer or manufacturer listings represented in the Saunas Factory Direct price index.')
+    desc=f'{source} supplier profile with {len(products)} tracked sauna models, observed prices and links to individual model research.'
+    schema={'@context':'https://schema.org','@type':'Organization','name':source,'description':summary}
+    canonical=f'https://saunasfactorydirect.com{supplier_path(source)}'
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(source)} Sauna Models & Prices | Supplier Profile</title><meta name="description" content="{e(desc,quote=True)}"><link rel="canonical" href="{e(canonical,quote=True)}"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/style.css"><script type="application/ld+json">{json.dumps(schema)}</script></head><body>{site_header()}<main><section class="supplier-hero"><div class="wrap supplier-hero-grid"><div><span class="eyebrow">Supplier profile</span><h1>{e(source)}</h1><p class="lede">{e(summary)}</p><div class="hero-actions"><a class="btn btn-primary" href="{e(landing,quote=True)}" target="_blank" rel="sponsored noopener">Visit {e(source)}</a><a class="btn btn-secondary" href="#models">View tracked models</a></div><p class="link-note">One external retailer link is provided on this profile. Verify price, availability, shipping and warranty terms before purchase.</p></div><aside class="supplier-summary"><h2>Index snapshot</h2><p><strong>Tracked models:</strong> {len(products)}</p><p><strong>Brands:</strong> {e(', '.join(brands))}</p><p><strong>Sauna types:</strong> {e(', '.join(categories))}</p><p><strong>Last dataset update:</strong> generated with the current price index</p></aside></div></section><section class="section section-white" id="models"><div class="wrap"><div class="section-title"><div><span class="eyebrow">Current catalog data</span><h2>Models attributed to {e(source)}</h2></div><p>These are exact-model listings currently represented in our dataset. Product availability can change between observations.</p></div><div class="table-shell"><table class="supplier-table"><thead><tr><th>Sauna model</th><th>Type</th><th>Placement & size</th><th>Observed price</th><th>Research</th></tr></thead><tbody>{supplier_model_rows(items)}</tbody></table></div><div class="compact-prose"><h2>Before buying</h2><p>Confirm the exact model number, included heater and controls, electrical requirements, freight method, lead time, return terms and manufacturer warranty. Our recorded price is a research snapshot rather than a guaranteed quote.</p></div></div></section></main>{site_footer()}</body></html>'''
+
+def supplier_index_page(groups):
+    e=html.escape
+    cards=[]
+    ordered=sorted(groups.items(),key=lambda item:(item[0]!='InHouse Wellness',item[0].lower()))
+    for source,items in ordered:
+        brands=sorted({p.get('brand') for p,_ in items if p.get('brand')})
+        cards.append(f'''<article class="supplier-card {"featured-supplier-card" if source=='InHouse Wellness' else ''}"><span class="badge">{"Featured retailer" if source=='InHouse Wellness' else "Supplier profile"}</span><h2><a href="{supplier_path(source)}">{e(source)}</a></h2><p>{len(items)} tracked model{"s" if len(items)!=1 else ""} · {e(', '.join(brands[:4]))}{' and more' if len(brands)>4 else ''}</p><a class="text-link" href="{supplier_path(source)}">View supplier profile →</a></article>''')
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sauna Supplier Directory | Saunas Factory Direct</title><meta name="description" content="Browse the sauna retailers and manufacturers represented in our price index. Each profile groups tracked models and provides one clearly disclosed retailer link."><link rel="canonical" href="https://saunasfactorydirect.com/suppliers/"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/style.css"></head><body>{site_header()}<main><section class="page-hero"><div class="wrap"><span class="eyebrow">Supplier directory</span><h1>Where the sauna prices come from</h1><p class="lede">Each profile groups the models attributed to that retailer or manufacturer. Product and deal buttons stay inside Saunas Factory Direct until you reach a supplier profile, where one clearly labeled external link is provided.</p></div></section><section class="section section-white"><div class="wrap"><div class="supplier-grid">{''.join(cards)}</div></div></section></main>{site_footer()}</body></html>'''
+
+def generate_supplier_pages(products):
+    groups=supplier_groups(products)
+    sdir=ROOT/'suppliers'; sdir.mkdir(exist_ok=True)
+    keys={supplier_key(source) for source in groups}
+    for d in sdir.iterdir():
+        if d.is_dir() and d.name not in keys:
+            for x in d.iterdir():
+                if x.is_file():x.unlink()
+            try:d.rmdir()
+            except OSError:pass
+    (sdir/'index.html').write_text(supplier_index_page(groups),encoding='utf-8')
+    urls=[]
+    for source,items in groups.items():
+        key=supplier_key(source); d=sdir/key; d.mkdir(parents=True,exist_ok=True)
+        offers=[o for _,o in items]; landing=supplier_landing(source,offers)
+        page=inhouse_supplier_page(items,landing) if source=='InHouse Wellness' else standard_supplier_page(source,items,landing)
+        (d/'index.html').write_text(page,encoding='utf-8')
+        urls.append(f'https://saunasfactorydirect.com/suppliers/{key}/')
+    return urls
 
 def generate_pages(products):
     mdir=ROOT/'models'; mdir.mkdir(exist_ok=True); keys={p['model_key'] for p in products}
@@ -331,7 +470,8 @@ def generate_pages(products):
             except OSError:pass
     for p in products:
         d=mdir/p['model_key']; d.mkdir(parents=True,exist_ok=True); (d/'index.html').write_text(page_html(p),encoding='utf-8')
-    urls=['https://saunasfactorydirect.com/','https://saunasfactorydirect.com/methodology/']+[f"https://saunasfactorydirect.com/models/{p['model_key']}/" for p in products]
+    supplier_urls=generate_supplier_pages(products)
+    urls=STATIC_URLS+supplier_urls+[f"https://saunasfactorydirect.com/models/{p['model_key']}/" for p in products]
     today=datetime.now(timezone.utc).date().isoformat()
     xml='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join(f'<url><loc>{u}</loc><lastmod>{today}</lastmod></url>\n' for u in urls)+'</urlset>\n'
     (ROOT/'sitemap.xml').write_text(xml,encoding='utf-8')
@@ -351,6 +491,8 @@ def main():
         products=merge_external_catalog(products,refresh=True)
         products=update_external(products,refresh=True)
     products=dedupe_products(products); products.sort(key=lambda p:(p.get('brand',''),p.get('model','')))
+    for p in products:
+        for offer in p.get('offers',[]):offer['supplier_key']=supplier_key(offer.get('source'))
     DATA.write_text(json.dumps({'generated_at':datetime.now(timezone.utc).isoformat(timespec='seconds'),'currency':'USD','products':products},indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
     write_csv(products); generate_pages(products)
     print(f'Wrote {len(products)} models and {sum(len(p.get("offers",[])) for p in products)} offers.')

@@ -1,16 +1,254 @@
-const $=(s)=>document.querySelector(s);const $$=(s)=>[...document.querySelectorAll(s)];
-const money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n||0);
-const esc=s=>(s??'').toString().replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
-let DATA=[];
-function inhouseOffer(p){return (p.offers||[]).find(o=>o.featured&&o.source==='InHouse Wellness')}
-function primaryOffer(p){const offers=(p.offers||[]).filter(o=>Number(o.price)>0);return inhouseOffer(p)||offers.slice().sort((a,b)=>Number(a.price)-Number(b.price))[0]}
-function bestObserved(p){const a=(p.offers||[]).map(o=>Number(o.price)).filter(Boolean);return a.length?Math.min(...a):0}
-function savings(p){const f=primaryOffer(p);return p.msrp&&f?Math.max(0,p.msrp-f.price):0}
-function median(arr){const a=arr.filter(Number.isFinite).sort((x,y)=>x-y);if(!a.length)return 0;const m=Math.floor(a.length/2);return a.length%2?a[m]:(a[m-1]+a[m])/2}
-function updateStats(meta){$('#model-count').textContent=DATA.length;const prices=DATA.map(p=>primaryOffer(p)?.price).filter(Boolean);$('#median-price').textContent=money(median(prices));$('#low-price').textContent=prices.length?money(Math.min(...prices)):'—';$('#high-price').textContent=prices.length?money(Math.max(...prices)):'—';$('#updated-date').textContent=(meta.generated_at||'').slice(0,10)||'—';const infrared=DATA.filter(p=>p.category==='Infrared').map(p=>primaryOffer(p)?.price);const traditional=DATA.filter(p=>p.category==='Traditional').map(p=>primaryOffer(p)?.price);const hybrid=DATA.filter(p=>p.category==='Hybrid').map(p=>primaryOffer(p)?.price);$('#idx-infrared').textContent=money(median(infrared));$('#idx-traditional').textContent=money(median(traditional));$('#idx-hybrid').textContent=money(median(hybrid));$('#idx-outdoor').textContent=money(median(DATA.filter(p=>p.placement==='Outdoor').map(p=>primaryOffer(p)?.price)))}
-function populateSelectors(){const select=$('#checker-model');select.innerHTML='<option value="">Select a sauna model…</option>'+DATA.map((p,i)=>`<option value="${i}">${esc(p.brand)} ${esc(p.model)}</option>`).join('');const brand=$('#brand-filter');const brands=[...new Set(DATA.map(p=>p.brand))].sort();brand.innerHTML='<option value="">All brands</option>'+brands.map(b=>`<option>${esc(b)}</option>`).join('')}
-function renderTable(){const q=$('#search').value.toLowerCase();const brand=$('#brand-filter').value;const cat=$('#category-filter').value;const cap=$('#capacity-filter').value;let rows=DATA.filter(p=>{const hay=(p.title+' '+p.brand+' '+p.model).toLowerCase();return (!q||hay.includes(q))&&(!brand||p.brand===brand)&&(!cat||p.category===cat)&&(!cap||String(p.capacity)===cap)});$('#result-count').textContent=`${rows.length} model${rows.length===1?'':'s'} shown`;$('#price-table-body').innerHTML=rows.map(p=>{const f=primaryOffer(p),best=bestObserved(p),save=savings(p),modelUrl=`/models/${encodeURIComponent(p.model_key)}/`,seller=f?.featured?'InHouse':(f?.source||'seller');return `<tr><td class="product-cell"><strong><a href="${modelUrl}">${esc(p.title)}</a></strong><span>${esc(p.category)} · ${esc(p.placement)} · ${p.capacity||'—'} person</span></td><td>${esc(p.brand)}</td><td>${esc(p.model)}</td><td><span class="price-main">${money(f?.price)}</span>${save?`<div class="deal-save">${money(save)} below reference</div>`:''}</td><td>${money(best)}</td><td>${p.msrp?money(p.msrp):'—'}</td><td><a class="shop-link" href="${esc(f?.url)}" target="_blank" rel="sponsored noopener">View ${esc(seller)} →</a></td></tr>`}).join('')||'<tr><td colspan="7">No matching models.</td></tr>'}
-function renderPicks(){const featured=DATA.filter(p=>inhouseOffer(p));const under3=featured.filter(p=>inhouseOffer(p).price<3000).sort((a,b)=>inhouseOffer(a).price-inhouseOffer(b).price)[0];const hybrid=featured.filter(p=>p.category==='Hybrid').sort((a,b)=>inhouseOffer(a).price-inhouseOffer(b).price)[0];const outdoor=featured.filter(p=>p.placement==='Outdoor').sort((a,b)=>inhouseOffer(a).price-inhouseOffer(b).price)[0];const picks=[['Featured value under $3k',under3],['Featured hybrid',hybrid],['Featured outdoor value',outdoor]];$('#featured-picks').innerHTML=picks.filter(x=>x[1]).map(([label,p])=>{const f=inhouseOffer(p);return `<article class="pick-card"><div class="pick-kicker">${label}</div><h3>${esc(p.title)}</h3><p>${esc(p.brand)} · ${p.capacity||'—'} person · ${esc(p.placement)}</p><div class="pick-price">${money(f.price)}</div><a class="btn btn-primary" href="${esc(f.url)}" target="_blank" rel="sponsored noopener">See featured offer</a></article>`}).join('')}
-function runChecker(){const idx=$('#checker-model').value;const quote=Number($('#quote-price').value);if(idx===''||!quote){$('#checker-result').className='checker-result empty';$('#checker-result').innerHTML='<div><strong>Select a model and enter a quoted price.</strong><br>We’ll compare it with the prices currently in the index.</div>';return}const p=DATA[Number(idx)],best=bestObserved(p),ih=inhouseOffer(p);let label='High',cls='high',msg='The quote is materially above the lowest price currently observed.';if(quote<=best*.98){label='Excellent',cls='good';msg='This quote is below the lowest price currently observed in our dataset.'}else if(quote<=best*1.05){label='Competitive',cls='good';msg='This quote is within 5% of the lowest price currently observed.'}else if(!p.msrp||quote<=p.msrp){label='Fair',cls='fair';msg='The quote is above current low pricing, but still below the reference/MSRP when available.'}$('#checker-result').className='checker-result';$('#checker-result').innerHTML=`<span class="rating ${cls}">${label} deal</span><h3>${esc(p.brand)} ${esc(p.model)}</h3><div class="price-line"><span class="price">${money(quote)}</span>${p.msrp?`<s>${money(p.msrp)}</s>`:''}</div><p>${msg}</p><div class="offer-list">${(p.offers||[]).slice().sort((a,b)=>(Number(b.featured)-Number(a.featured))||(a.price-b.price)).map(o=>`<div class="offer ${o.featured?'featured':''}"><div><strong>${esc(o.source)}</strong>${o.featured?'<span class="feature-label">Featured first</span>':''}<div class="tiny">Observed ${esc(o.observed||'recently')}</div></div><div><strong>${money(o.price)}</strong> · <a href="${esc(o.url)}" target="_blank" rel="sponsored noopener">visit</a></div></div>`).join('')}</div>${ih&&ih.price>best?`<p class="tiny">A lower advertised price is in the index. InHouse Wellness publishes a price-match guarantee; verify eligibility before purchase.</p>`:''}`}
-async function init(){try{const res=await fetch('/data/products.json',{cache:'no-store'});const meta=await res.json();DATA=meta.products||[];updateStats(meta);populateSelectors();renderTable();renderPicks();['#search','#brand-filter','#category-filter','#capacity-filter'].forEach(s=>$(s)?.addEventListener('input',renderTable));$('#checker-btn')?.addEventListener('click',runChecker);$('#checker-model')?.addEventListener('change',runChecker)}catch(e){console.error(e);$('#price-table-body').innerHTML='<tr><td colspan="7">Price data could not be loaded.</td></tr>'}}
+const $ = (selector) => document.querySelector(selector);
+
+const money = (value) => new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  maximumFractionDigits: 0,
+}).format(Number(value) || 0);
+
+const esc = (value) => (value ?? '').toString().replace(/[&<>"']/g, (character) => ({
+  '&': '&amp;',
+  '<': '&lt;',
+  '>': '&gt;',
+  '"': '&quot;',
+  "'": '&#039;',
+}[character]));
+
+const sourceSlug = (value) => (value || 'supplier')
+  .toLowerCase()
+  .normalize('NFKD')
+  .replace(/[\u0300-\u036f]/g, '')
+  .replace(/[^a-z0-9]+/g, '-')
+  .replace(/^-|-$/g, '');
+
+let DATA = [];
+
+function inhouseOffer(product) {
+  return (product.offers || []).find((offer) => offer.source === 'InHouse Wellness' && Number(offer.price) > 0);
+}
+
+function displayOffers(product) {
+  const offers = (product.offers || []).filter((offer) => Number(offer.price) > 0);
+  const inhouse = inhouseOffer(product);
+  if (inhouse) return [inhouse];
+
+  const bySource = new Map();
+  offers.forEach((offer) => {
+    const current = bySource.get(offer.source);
+    if (!current || Number(offer.price) < Number(current.price)) bySource.set(offer.source, offer);
+  });
+  return [...bySource.values()].sort((a, b) => Number(a.price) - Number(b.price));
+}
+
+function supplierUrl(offer, product) {
+  const key = offer.supplier_key || sourceSlug(offer.source);
+  const modelAnchor = product?.model_key ? `#model-${encodeURIComponent(product.model_key)}` : '#models';
+  return `/suppliers/${encodeURIComponent(key)}/${modelAnchor}`;
+}
+
+function primaryOffer(product) {
+  const offers = displayOffers(product);
+  return offers.find((offer) => offer.featured) || offers[0];
+}
+
+function bestObserved(product) {
+  const prices = displayOffers(product).map((offer) => Number(offer.price)).filter(Boolean);
+  return prices.length ? Math.min(...prices) : 0;
+}
+
+function savings(product) {
+  const offer = primaryOffer(product);
+  return product.msrp && offer ? Math.max(0, product.msrp - offer.price) : 0;
+}
+
+function median(values) {
+  const sorted = values.filter(Number.isFinite).sort((a, b) => a - b);
+  if (!sorted.length) return 0;
+  const midpoint = Math.floor(sorted.length / 2);
+  return sorted.length % 2 ? sorted[midpoint] : (sorted[midpoint - 1] + sorted[midpoint]) / 2;
+}
+
+function updateStats(meta) {
+  $('#model-count').textContent = DATA.length;
+  const prices = DATA.map((product) => Number(primaryOffer(product)?.price)).filter(Boolean);
+  $('#median-price').textContent = money(median(prices));
+  $('#low-price').textContent = prices.length ? money(Math.min(...prices)) : '—';
+  $('#high-price').textContent = prices.length ? money(Math.max(...prices)) : '—';
+  $('#updated-date').textContent = (meta.generated_at || '').slice(0, 10) || '—';
+
+  const categoryMedian = (category) => median(DATA
+    .filter((product) => product.category === category)
+    .map((product) => Number(primaryOffer(product)?.price)));
+
+  $('#idx-infrared').textContent = money(categoryMedian('Infrared'));
+  $('#idx-traditional').textContent = money(categoryMedian('Traditional'));
+  $('#idx-hybrid').textContent = money(categoryMedian('Hybrid'));
+  $('#idx-outdoor').textContent = money(median(DATA
+    .filter((product) => product.placement === 'Outdoor')
+    .map((product) => Number(primaryOffer(product)?.price))));
+}
+
+function resetChecker(message = 'Choose a brand, select a model and enter your quoted price.') {
+  const result = $('#checker-result');
+  result.className = 'checker-result empty';
+  result.innerHTML = `<div><strong>${esc(message)}</strong><br>We’ll compare it with the current displayed offer and available reference price.</div>`;
+}
+
+function populateCheckerModels() {
+  const brand = $('#checker-brand').value;
+  const modelSelect = $('#checker-model');
+  const products = DATA.filter((product) => product.brand === brand);
+
+  modelSelect.disabled = !brand;
+  modelSelect.innerHTML = brand
+    ? `<option value="">Select a ${esc(brand)} model…</option>${products.map((product) => (
+      `<option value="${esc(product.model_key)}">${esc(product.model)} — ${esc(product.title)}</option>`
+    )).join('')}`
+    : '<option value="">Choose a brand first…</option>';
+  resetChecker(brand ? 'Now select a model and enter your quoted price.' : undefined);
+}
+
+function populateSelectors() {
+  const brands = [...new Set(DATA.map((product) => product.brand))].sort((a, b) => a.localeCompare(b));
+  const options = brands.map((brand) => `<option value="${esc(brand)}">${esc(brand)}</option>`).join('');
+  $('#checker-brand').innerHTML = `<option value="">Choose a brand…</option>${options}`;
+  $('#brand-filter').innerHTML = `<option value="">All brands</option>${options}`;
+  populateCheckerModels();
+}
+
+function renderTable() {
+  const query = $('#search').value.toLowerCase();
+  const brand = $('#brand-filter').value;
+  const category = $('#category-filter').value;
+  const capacity = $('#capacity-filter').value;
+  const rows = DATA.filter((product) => {
+    const haystack = `${product.title} ${product.brand} ${product.model}`.toLowerCase();
+    return (!query || haystack.includes(query))
+      && (!brand || product.brand === brand)
+      && (!category || product.category === category)
+      && (!capacity || String(product.capacity) === capacity);
+  });
+
+  $('#result-count').textContent = `${rows.length} model${rows.length === 1 ? '' : 's'} shown`;
+  $('#price-table-body').innerHTML = rows.map((product) => {
+    const offer = primaryOffer(product);
+    const best = bestObserved(product);
+    const save = savings(product);
+    const modelUrl = `/models/${encodeURIComponent(product.model_key)}/`;
+    return `<tr>
+      <td class="product-cell"><strong><a href="${modelUrl}">${esc(product.title)}</a></strong><span>${esc(product.category)} · ${esc(product.placement)} · ${product.capacity || '—'} person</span></td>
+      <td>${esc(product.brand)}</td>
+      <td>${esc(product.model)}</td>
+      <td><span class="price-main">${money(offer?.price)}</span>${save ? `<div class="deal-save">${money(save)} below reference</div>` : ''}</td>
+      <td>${money(best)}</td>
+      <td>${product.msrp ? money(product.msrp) : '—'}</td>
+      <td><span class="seller-name">${esc(offer?.source || 'Supplier')}</span><a class="shop-link" href="${supplierUrl(offer || {}, product)}">Buy Here →</a></td>
+    </tr>`;
+  }).join('') || '<tr><td colspan="7">No matching models.</td></tr>';
+}
+
+function renderPicks() {
+  const featured = DATA.filter((product) => inhouseOffer(product));
+  const under3 = featured
+    .filter((product) => Number(inhouseOffer(product).price) < 3000)
+    .sort((a, b) => Number(inhouseOffer(a).price) - Number(inhouseOffer(b).price))[0];
+  const hybrid = featured
+    .filter((product) => product.category === 'Hybrid')
+    .sort((a, b) => Number(inhouseOffer(a).price) - Number(inhouseOffer(b).price))[0];
+  const outdoor = featured
+    .filter((product) => product.placement === 'Outdoor')
+    .sort((a, b) => Number(inhouseOffer(a).price) - Number(inhouseOffer(b).price))[0];
+  const picks = [
+    ['Featured value under $3k', under3],
+    ['Featured hybrid', hybrid],
+    ['Featured outdoor value', outdoor],
+  ];
+
+  $('#featured-picks').innerHTML = picks.filter(([, product]) => product).map(([label, product]) => {
+    const offer = inhouseOffer(product);
+    return `<article class="pick-card">
+      <div class="pick-kicker">${esc(label)}</div>
+      <h3>${esc(product.title)}</h3>
+      <p>${esc(product.brand)} · ${product.capacity || '—'} person · ${esc(product.placement)}</p>
+      <div class="pick-price">${money(offer.price)}</div>
+      <a class="btn btn-primary" href="${supplierUrl(offer, product)}">Buy Here</a>
+    </article>`;
+  }).join('');
+}
+
+function selectedCheckerProduct() {
+  const key = $('#checker-model').value;
+  return DATA.find((product) => product.model_key === key);
+}
+
+function runChecker() {
+  const product = selectedCheckerProduct();
+  const quote = Number($('#quote-price').value);
+  if (!product || !Number.isFinite(quote) || quote <= 0) {
+    resetChecker('Select a brand and model, then enter a valid quoted price.');
+    return;
+  }
+
+  const best = bestObserved(product);
+  const offers = displayOffers(product);
+  let label = 'High';
+  let className = 'high';
+  let message = 'The quote is materially above the current displayed offer.';
+
+  if (quote <= best * 0.98) {
+    label = 'Excellent';
+    className = 'good';
+    message = 'This quote is below the current displayed offer in our dataset.';
+  } else if (quote <= best * 1.05) {
+    label = 'Competitive';
+    className = 'good';
+    message = 'This quote is within 5% of the current displayed offer.';
+  } else if (!product.msrp || quote <= product.msrp) {
+    label = 'Fair';
+    className = 'fair';
+    message = 'The quote is above the current displayed offer, but remains below the reference price when one is available.';
+  }
+
+  const result = $('#checker-result');
+  result.className = 'checker-result';
+  result.innerHTML = `<span class="rating ${className}">${label} deal</span>
+    <h3>${esc(product.brand)} ${esc(product.model)}</h3>
+    <div class="price-line"><span class="price">${money(quote)}</span>${product.msrp ? `<s>${money(product.msrp)}</s>` : ''}</div>
+    <p>${esc(message)}</p>
+    <div class="offer-list">${offers.map((offer) => `<div class="offer ${offer.featured ? 'featured' : ''}">
+      <div><strong>${esc(offer.source)}</strong>${offer.featured ? '<span class="feature-label">Featured retailer</span>' : ''}<div class="tiny">Observed ${esc(offer.observed || 'recently')}</div></div>
+      <div><strong>${money(offer.price)}</strong> · <a href="${supplierUrl(offer, product)}">Buy Here</a></div>
+    </div>`).join('')}</div>
+    <p class="tiny">Purchase links open an internal supplier profile first. Shipping, installation and included accessories can change the total value.</p>`;
+}
+
+async function init() {
+  try {
+    const response = await fetch('/data/products.json', { cache: 'no-store' });
+    if (!response.ok) throw new Error(`Price data request failed: ${response.status}`);
+    const meta = await response.json();
+    DATA = meta.products || [];
+    updateStats(meta);
+    populateSelectors();
+    renderTable();
+    renderPicks();
+
+    ['#search', '#brand-filter', '#category-filter', '#capacity-filter'].forEach((selector) => {
+      $(selector)?.addEventListener('input', renderTable);
+    });
+    $('#checker-brand')?.addEventListener('change', populateCheckerModels);
+    $('#checker-model')?.addEventListener('change', () => {
+      if (Number($('#quote-price').value) > 0) runChecker();
+    });
+    $('#checker-btn')?.addEventListener('click', runChecker);
+    $('#quote-price')?.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') runChecker();
+    });
+  } catch (error) {
+    console.error(error);
+    $('#price-table-body').innerHTML = '<tr><td colspan="7">Price data could not be loaded.</td></tr>';
+    resetChecker('Price data could not be loaded. Please try again later.');
+  }
+}
+
 init();
